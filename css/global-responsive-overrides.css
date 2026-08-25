@@ -16,7 +16,7 @@ iframe,
 embed,
 object {
     max-width: 100% !important;
-    height: auto !important;
+    height: 100% !important;
     display: block;
 }
 
@@ -464,15 +464,4 @@ article.page,
 .elementor-element-14cb3fb6 {
     padding-bottom: 0 !important;
     margin-bottom: -30px !important;
-}
-
-/* Make video cover full width on index page */
-.elementor-element-280e6c7 {
-    --width: 100% !important;
-    width: 100% !important;
-    --margin-top: 0 !important;
-    margin-top: 0 !important;
-}
-.elementor-element-1365c2d4 {
-    display: none !important;
 }
