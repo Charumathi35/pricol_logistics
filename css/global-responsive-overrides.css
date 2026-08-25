@@ -1,4 +1,13 @@
-/* Global Responsive Overrides */
+/* Global Responsive Overrides 
+
+   Media Query Structure Guidelines:
+   - 1920px desktop -> spacious layout: @media (min-width: 1367px) and (max-width: 1920px)
+   - 1366px laptop -> slightly tighter layout: @media (min-width: 1025px) and (max-width: 1366px)
+   - 1024px tablet -> compact layout: @media (min-width: 769px) and (max-width: 1024px)
+   - 768px tablet -> more compact layout: @media (min-width: 481px) and (max-width: 768px)
+   - 480px mobile -> narrow layout: @media (min-width: 361px) and (max-width: 480px)
+   - 360px mobile -> fully fitted layout: @media (max-width: 360px)
+*/
 /* Prevent horizontal scrolling on mobile */
 html,
 body {
@@ -106,7 +115,7 @@ object {
 }
 
 /* Optimize Header Size and Banner Image based on screen size */
-@media (min-width: 1025px) {
+@media (min-width: 1367px) and (max-width: 1920px) {
 
     /* Laptop/Desktop */
     .elementor-widget-image img.wp-image-486,
@@ -183,7 +192,7 @@ object {
 }
 
 /* Laptop Specific Adjustments (1025px - 1600px) */
-@media (min-width: 1025px) and (max-width: 1600px) {
+@media (min-width: 1025px) and (max-width: 1366px) {
 
     /* Prevent menu from wrapping on smaller laptop screens */
     .jkit-menu-wrapper ul.jkit-menu>li>a {
@@ -367,6 +376,30 @@ object {
     margin-bottom: 4px !important;
 }
 
+/* Ultra-wide Desktop adjustments for Footer (> 1920px) */
+@media (min-width: 1921px) {
+    .elementor-element-31f28075>.e-con-inner {
+        max-width: 1600px !important;
+        gap: 40px !important;
+    }
+    .elementor-element-31f28075 .elementor-heading-title {
+        font-size: 18px !important;
+        margin-bottom: 12px !important;
+    }
+    .elementor-element-31f28075 .elementor-icon-list-text,
+    .elementor-element-31f28075 .elementor-icon-list-item>a {
+        font-size: 15px !important;
+    }
+    .elementor-element-31f28075 .elementor-icon-list-icon svg {
+        width: 15px !important;
+        height: 15px !important;
+    }
+    .elementor-element-5cc468e0 .elementor-heading-title,
+    .elementor-element-5cc468e0 .elementor-icon-list-text {
+        font-size: 14px !important;
+    }
+}
+
 /* Copyright section fixes */
 .elementor-element-5cc468e0,
 .elementor-element-5cc468e0 .e-con,
@@ -477,4 +510,94 @@ article.page,
     height: auto !important;
     max-width: 100% !important;
     object-fit: contain !important;
+}
+
+/* ==========================================================================
+   Standardized Media Queries for Device Sizes
+   ========================================================================== */
+
+/* 1920px Desktop -> Spacious Layout */
+@media (min-width: 1367px) and (max-width: 1920px) {
+    /* Add spacious layout styles here */
+}
+
+/* 1366px Laptop -> Slightly Tighter Layout */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    /* Add slightly tighter layout styles here */
+}
+
+/* 1024px Tablet -> Compact Layout */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Add compact layout styles here */
+}
+
+/* 768px Tablet -> More Compact Layout */
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Add more compact layout styles here */
+}
+
+/* 480px Mobile -> Narrow Layout */
+@media (min-width: 361px) and (max-width: 480px) {
+    /* Add narrow layout styles here */
+}
+
+/* 360px Mobile -> Fully Fitted Layout */
+@media (max-width: 360px) {
+    /* Add fully fitted layout styles here */
+}
+
+/* Fix text boxes over images in Services grids (e.g. Warehousing Page) */
+.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+}
+
+.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial .elementor-widget-container,
+.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial .jeg-elementor-kit,
+.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial .jkit-icon-box,
+.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial .jkit-icon-box-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+    position: relative !important;
+    top: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+}
+
+.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial .icon-box-body {
+    margin: 0 !important;
+    padding: 20px 15px !important; /* Add padding so background sits beautifully below the image */
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    transform: none !important;
+    position: relative !important;
+    top: auto !important;
+    flex-grow: 1 !important;
+}
+
+.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial .title,
+.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial p {
+    text-align: center !important;
+    margin: 0 auto !important;
+    width: 100% !important;
 }
