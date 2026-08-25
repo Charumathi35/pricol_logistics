@@ -10,7 +10,12 @@ body {
 }
 
 /* Ensure all images and videos are responsive */
-img,
+img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+}
+
 video,
 iframe,
 embed,
@@ -464,4 +469,12 @@ article.page,
 .elementor-element-14cb3fb6 {
     padding-bottom: 0 !important;
     margin-bottom: -30px !important;
+}
+/* Fix squeezed images in Our Services and icon boxes across all pages */
+.jkit-icon-box .icon img,
+.jkit-icon-box-wrapper .icon img,
+.elementor-widget-jkit_icon_box img {
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
 }
