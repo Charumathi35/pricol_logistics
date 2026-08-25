@@ -1,0 +1,465 @@
+/* Global Responsive Overrides */
+/* Prevent horizontal scrolling on mobile */
+html,
+body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure all images and videos are responsive */
+img,
+video,
+iframe,
+embed,
+object {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+}
+
+/* Cleaned up aggressive Elementor fixed width resets for columns and containers */
+/* Elements should rely on their natural flex properties instead of global overrides */
+
+/* Fluid Typography */
+@media (max-width: 768px) {
+
+    h1,
+    .elementor-heading-title.elementor-size-default h1,
+    .elementor-widget-heading h1.elementor-heading-title,
+    h1.ekit-heading--title,
+    .elementskit-section-title-wraper h1 {
+        font-size: clamp(2rem, 5vw, 3rem) !important;
+        line-height: 1.2 !important;
+    }
+
+    h2,
+    .elementor-heading-title.elementor-size-default h2,
+    .elementor-widget-heading h2.elementor-heading-title,
+    h2.ekit-heading--title,
+    .elementskit-section-title-wraper h2 {
+        font-size: clamp(1.75rem, 4.5vw, 2.5rem) !important;
+        line-height: 1.3 !important;
+    }
+
+    h3,
+    .elementor-heading-title.elementor-size-default h3,
+    .elementor-widget-heading h3.elementor-heading-title,
+    h3.ekit-heading--title,
+    .elementskit-section-title-wraper h3 {
+        font-size: clamp(1.5rem, 4vw, 2rem) !important;
+        line-height: 1.3 !important;
+    }
+
+    h4,
+    h5,
+    h6,
+    .elementor-heading-title.elementor-size-default h4,
+    .elementor-heading-title.elementor-size-default h5,
+    .elementor-heading-title.elementor-size-default h6,
+    .ekit-heading--title h4,
+    .ekit-heading--title h5,
+    .ekit-heading--title h6 {
+        font-size: clamp(1.2rem, 3.5vw, 1.5rem) !important;
+        line-height: 1.4 !important;
+    }
+
+    p,
+    span,
+    a,
+    li,
+    .elementor-text-editor {
+        font-size: clamp(1rem, 2.5vw, 1.125rem) !important;
+        line-height: 1.6 !important;
+    }
+}
+
+/* Menu Fixes for Mobile */
+@media (max-width: 1024px) {
+    .elementor-nav-menu--main {
+        display: none !important;
+        /* Usually toggled by hamburger menu in elementor */
+    }
+
+    .elementor-menu-toggle {
+        display: flex !important;
+    }
+}
+
+/* Fix Elementor spacing issues on mobile */
+@media (max-width: 768px) {
+    .elementor-section {
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+    }
+
+    .elementor-column-gap-default>.elementor-column>.elementor-element-populated {
+        padding: 10px !important;
+    }
+}
+
+/* Optimize Header Size and Banner Image based on screen size */
+@media (min-width: 1025px) {
+
+    /* Laptop/Desktop */
+    .elementor-widget-image img.wp-image-486,
+    .elementor-widget-image img[src*="Pricol-Logistics.png"] {
+        max-height: 120px !important;
+        width: auto !important;
+        object-fit: contain;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* Tablet */
+    .elementor-widget-image img.wp-image-486,
+    .elementor-widget-image img[src*="Pricol-Logistics.png"] {
+        max-height: 90px !important;
+        width: auto !important;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Mobile */
+    .elementor-widget-image img.wp-image-486,
+    .elementor-widget-image img[src*="Pricol-Logistics.png"] {
+        max-height: 60px !important;
+        width: auto !important;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    /* Make header container compact on mobile */
+    .elementor-element-285579d4,
+    header.elementor-location-header {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        min-height: auto !important;
+    }
+}
+
+/* Optimize section height for different screen sizes (Viewport Height) */
+@media (max-width: 1024px) {
+
+    /* Tablet: Reduce full-height sections to 70% of viewport */
+    .elementor-section-height-full,
+    .elementor-section-height-min-height {
+        min-height: 70vh !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Mobile: Reduce full-height sections naturally without aggressive min-height overrides */
+    .elementor-section-height-full,
+    .elementor-section-height-min-height {
+        min-height: 50vh !important;
+        height: auto !important;
+    }
+
+    /* Ensure background videos don't cause vertical overflow, but don't force 100vh */
+    .elementor-background-video-embed {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}
+
+
+/* Make the hero section fit exactly 100vh height and ensure background fits */
+.elementor-element-518d30e1 {
+    min-height: 100vh !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+/* Laptop Specific Adjustments (1025px - 1600px) */
+@media (min-width: 1025px) and (max-width: 1600px) {
+
+    /* Prevent menu from wrapping on smaller laptop screens */
+    .jkit-menu-wrapper ul.jkit-menu>li>a {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        font-size: 18px !important;
+    }
+
+    /* Ensure all content (logo, menus, text) has breathing room and doesn't touch screen edges on laptops */
+    .e-con-inner {
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
+
+    /* Reduce hero text size on laptops to prevent wrapping to 3/4 lines */
+    .elementor-element-518d30e1 .elementor-heading-title {
+        font-size: clamp(30px, 3.5vw, 55px) !important;
+        line-height: 1.1 !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Ensure logo has specific left space on responsive (tablet/mobile) screens */
+@media (max-width: 1024px) {
+
+    .elementor-widget-image img.wp-image-486,
+    .elementor-widget-image img[src*="Pricol-Logistics.png"] {
+        margin-left: 20px !important;
+    }
+
+    /* Replace the tranship logo in the mobile menu panel with Pricol logo */
+    .jkit-nav-identity-panel .jkit-nav-logo img {
+        content: url('../images/Pricol-Logistics.png') !important;
+        max-height: 40px !important;
+        width: auto !important;
+        object-fit: contain !important;
+    }
+}
+
+/* --- COMPREHENSIVE MOBILE RESPONSIVENESS FIXES --- */
+@media (max-width: 768px) {
+
+    /* Fluid Containers and Overflow Prevention */
+    .elementor-container,
+    .elementor-section-wrap,
+    .elementor-column,
+    .elementor-row,
+    .elementor-widget-container,
+    .e-con,
+    .e-con-inner {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Force columns to stack vertically on mobile */
+    .elementor-container,
+    .elementor-row,
+    .e-con.e-flex,
+    .e-con-inner.e-flex {
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        align-items: stretch !important;
+        /* Let children take full width naturally */
+    }
+
+    /* Reset excessive desktop padding/margins to safe mobile values */
+    .elementor-section,
+    .e-con,
+    .e-con-inner {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .elementor-section {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    /* Prevent text and widgets from pushing outside the viewport */
+    .elementor-widget-wrap,
+    .elementor-widget-container {
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        max-width: 100% !important;
+    }
+}
+
+/* --- FOOTER RESPONSIVE AND SIZING FIXES --- */
+/* Main footer outer container: control top/bottom padding only */
+/* Override Elementor CSS custom properties so padding-block-start/end is affected */
+.elementor-element-31f28075 {
+    --padding-top: 30px !important;
+    --padding-bottom: 20px !important;
+    --padding-left: 20px !important;
+    --padding-right: 20px !important;
+    min-height: auto !important;
+    height: auto !important;
+}
+
+/* Footer inner row: force horizontal on desktop */
+@media (min-width: 1025px) {
+    .elementor-element-31f28075>.e-con-inner {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        gap: 20px !important;
+        max-width: 1300px !important;
+        margin: 0 auto !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: 100% !important;
+    }
+
+    /* Column widths — must sum to < 100% to allow for gaps */
+    .elementor-element-4f2c9e7e {
+        /* Logo + LinkedIn */
+        flex: 0 0 16% !important;
+        width: 16% !important;
+        min-width: 0 !important;
+    }
+
+    .elementor-element-3e2eb793 {
+        /* Contact Us */
+        flex: 0 0 22% !important;
+        width: 22% !important;
+        min-width: 0 !important;
+    }
+
+    .elementor-element-43adfd6b {
+        /* Company */
+        flex: 0 0 14% !important;
+        width: 14% !important;
+        min-width: 0 !important;
+    }
+
+    .elementor-element-9d0d9e7 {
+        /* Our Services */
+        flex: 0 0 14% !important;
+        width: 14% !important;
+        min-width: 0 !important;
+    }
+
+    .elementor-element-66adc269 {
+        /* Accreditations */
+        flex: 0 0 28% !important;
+        width: 28% !important;
+        min-width: 0 !important;
+    }
+
+    /* Pricol logo image sizing */
+    .elementor-element-4f2c9e7e img {
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+}
+
+/* Reduce text size in the main footer */
+.elementor-element-31f28075 .elementor-heading-title {
+    font-size: 14px !important;
+    margin-bottom: 8px !important;
+    line-height: 1.3 !important;
+}
+
+.elementor-element-31f28075 .elementor-icon-list-text,
+.elementor-element-31f28075 .elementor-icon-list-item>a {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+}
+
+.elementor-element-31f28075 .elementor-icon-list-icon svg {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+/* Reduce gap between list items */
+.elementor-element-31f28075 .elementor-icon-list-item {
+    padding-bottom: 4px !important;
+    margin-bottom: 4px !important;
+}
+
+/* Copyright section fixes */
+.elementor-element-5cc468e0,
+.elementor-element-5cc468e0 .e-con,
+.elementor-element-5cc468e0 .e-con-inner {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    min-height: auto !important;
+    height: auto !important;
+}
+
+.elementor-element-5cc468e0 .elementor-heading-title,
+.elementor-element-5cc468e0 .elementor-icon-list-text {
+    font-size: 12px !important;
+}
+
+/* Ensure footer stacks correctly on tablet/mobile */
+@media (max-width: 1024px) {
+    .elementor-element-31f28075 .e-con-inner {
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    .elementor-element-5cc468e0 .e-con-inner {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 15px !important;
+    }
+
+    .elementor-element-5cc468e0 .elementor-widget-container,
+    .elementor-element-5cc468e0 .elementor-icon-list-items {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+}
+
+/* Prevent white space below footer */
+html,
+body {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.xs_social_share_widget {
+    display: none !important;
+}
+
+.elementor-element-5cc468e0,
+.elementor-76 {
+    margin-bottom: 0 !important;
+    margin-top: -10px !important;
+    /* Aggressive pull up to overlap any responsive gaps */
+    position: relative;
+    z-index: 99;
+}
+
+/* Remove unwanted white space above the footer on inner pages */
+.page-wrapper,
+#main,
+.vamtam-main,
+article.post,
+article.page,
+.site-content,
+.post-content,
+.page-content,
+.elementor-page,
+.elementor-372,
+.page-content>.elementor {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Ensure the last elementor section before footer has no bottom margin */
+.elementor-page>.elementor-element:last-child,
+.elementor-372>.elementor-element:last-child,
+.page-content>.elementor>.e-con:last-child,
+.elementor-element-53db5ddd,
+#main.vamtam-main {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    border: none !important;
+}
+
+.xs_social_share_widget.after_content {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Hide old ElementsKit footer to remove white space above new footer */
+.ekit-template-content-footer {
+    display: none !important;
+}
+/* Reduce top space of Industry Sector section on index page */
+.elementor-element-2f32c441 {
+    --padding-top: 1em !important;
+    padding-top: 1em !important;
+}
+/* Reduce bottom space of About section on index page */
+.elementor-element-14cb3fb6 {
+    padding-bottom: 0 !important;
+    margin-bottom: -30px !important;
+}
