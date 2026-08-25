@@ -182,9 +182,9 @@ object {
 
     /* Prevent menu from wrapping on smaller laptop screens */
     .jkit-menu-wrapper ul.jkit-menu>li>a {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-        font-size: 18px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        font-size: 17px !important;
     }
 
     /* Ensure all content (logo, menus, text) has breathing room and doesn't touch screen edges on laptops */
@@ -453,13 +453,26 @@ article.page,
 .ekit-template-content-footer {
     display: none !important;
 }
+
 /* Reduce top space of Industry Sector section on index page */
 .elementor-element-2f32c441 {
     --padding-top: 1em !important;
     padding-top: 1em !important;
 }
+
 /* Reduce bottom space of About section on index page */
 .elementor-element-14cb3fb6 {
     padding-bottom: 0 !important;
     margin-bottom: -30px !important;
+}
+
+/* Make video cover full width on index page */
+.elementor-element-280e6c7 {
+    --width: 100% !important;
+    width: 100% !important;
+    --margin-top: 0 !important;
+    margin-top: 0 !important;
+}
+.elementor-element-1365c2d4 {
+    display: none !important;
 }
