@@ -25,14 +25,16 @@ img {
     display: block;
 }
 
-video,
-iframe,
-embed,
-object {
+video:not(.elementor-background-video-embed video),
+iframe:not(.elementor-background-video-embed iframe),
+embed:not(.elementor-background-video-embed embed),
+object:not(.elementor-background-video-embed object) {
     max-width: 100% !important;
     height: 100% !important;
     display: block;
 }
+
+
 
 /* Cleaned up aggressive Elementor fixed width resets for columns and containers */
 /* Elements should rely on their natural flex properties instead of global overrides */
@@ -165,6 +167,15 @@ object {
     .elementor-section-height-min-height {
         min-height: 70vh !important;
     }
+
+    /* Ensure inner page banners show full width instead of cropping on tablet and mobile */
+    .elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a),
+    .elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a):not(.elementor-motion-effects-element-type-background),
+    .elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a)>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+        background-size: 100% 100% !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -176,10 +187,16 @@ object {
         height: auto !important;
     }
 
-    /* Ensure background videos don't cause vertical overflow, but don't force 100vh */
+    /* Background videos should maintain their aspect ratio and positioning */
     .elementor-background-video-embed {
-        max-width: 100% !important;
-        height: auto !important;
+        height: 100% !important;
+    }
+
+    /* Ensure inner page banners show full width instead of cropping */
+    .elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a) {
+        background-size: 100% 100% !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
     }
 }
 
@@ -212,6 +229,15 @@ object {
         font-size: clamp(30px, 3.5vw, 55px) !important;
         line-height: 1.1 !important;
         max-width: 100% !important;
+    }
+
+    /* Ensure inner page banners show full width instead of cropping on small laptops */
+    .elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a),
+    .elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a):not(.elementor-motion-effects-element-type-background),
+    .elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a)>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+        background-size: 100% 100% !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
     }
 }
 
@@ -282,7 +308,6 @@ object {
 
 /* --- FOOTER RESPONSIVE AND SIZING FIXES --- */
 /* Main footer outer container: control top/bottom padding only */
-/* Override Elementor CSS custom properties so padding-block-start/end is affected */
 .elementor-element-31f28075 {
     --padding-top: 30px !important;
     --padding-bottom: 20px !important;
@@ -290,58 +315,82 @@ object {
     --padding-right: 20px !important;
     min-height: auto !important;
     height: auto !important;
+    max-height: none !important;
 }
 
-/* Footer inner row: force horizontal on desktop */
+/* Footer inner row: use Grid to merge Contact Us under the Logo */
 @media (min-width: 1025px) {
     .elementor-element-31f28075>.e-con-inner {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        justify-content: space-between !important;
-        align-items: flex-start !important;
-        gap: 20px !important;
-        max-width: 1300px !important;
+        display: grid !important;
+        grid-template-columns: 26% 15% 20% 33% !important;
+        grid-template-rows: auto auto auto auto 1fr !important;
+        row-gap: 0 !important;
+        column-gap: 2% !important;
+        max-width: 1280px !important;
+        height: 100% !important;
         margin: 0 auto !important;
         padding-left: 20px !important;
         padding-right: 20px !important;
         width: 100% !important;
+        align-items: start !important;
+        align-content: center !important;
+        justify-content: center !important;
     }
 
-    /* Column widths — must sum to < 100% to allow for gaps */
-    .elementor-element-4f2c9e7e {
-        /* Logo + LinkedIn */
-        flex: 0 0 16% !important;
-        width: 16% !important;
-        min-width: 0 !important;
-    }
-
+    /* Flatten Col 1 (Logo/LinkedIn) and Col 2 (Contact Us) */
+    .elementor-element-4f2c9e7e,
     .elementor-element-3e2eb793 {
-        /* Contact Us */
-        flex: 0 0 22% !important;
-        width: 22% !important;
-        min-width: 0 !important;
+        display: contents !important;
     }
 
+    /* 1. Logo Container */
+    .elementor-element-1f15e6ed {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        margin-bottom: 25px !important;
+    }
+
+    /* 2. Contact Us Heading */
+    .elementor-element-7d047cc {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        margin-bottom: 10px !important;
+    }
+
+    /* 3. Contact Us List */
+    .elementor-element-4a14c3a {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        margin-bottom: 25px !important;
+    }
+
+    /* 4. LinkedIn Icon and Text */
+    .elementor-element-4f2c9e7e>div:last-child {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        margin-top: 0 !important;
+    }
+
+    /* Remaining columns: Company, Services, Accreditations */
     .elementor-element-43adfd6b {
-        /* Company */
-        flex: 0 0 14% !important;
-        width: 14% !important;
-        min-width: 0 !important;
+        grid-column: 2 / 3;
+        grid-row: 1 / 6;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     .elementor-element-9d0d9e7 {
-        /* Our Services */
-        flex: 0 0 14% !important;
-        width: 14% !important;
-        min-width: 0 !important;
+        grid-column: 3 / 4;
+        grid-row: 1 / 6;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     .elementor-element-66adc269 {
-        /* Accreditations */
-        flex: 0 0 28% !important;
-        width: 28% !important;
-        min-width: 0 !important;
+        grid-column: 4 / 5;
+        grid-row: 1 / 6;
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     /* Pricol logo image sizing */
@@ -354,26 +403,26 @@ object {
 
 /* Reduce text size in the main footer */
 .elementor-element-31f28075 .elementor-heading-title {
-    font-size: 14px !important;
-    margin-bottom: 8px !important;
-    line-height: 1.3 !important;
+    font-size: 18px !important;
+    margin-bottom: 12px !important;
+    line-height: 1.4 !important;
 }
 
 .elementor-element-31f28075 .elementor-icon-list-text,
 .elementor-element-31f28075 .elementor-icon-list-item>a {
-    font-size: 12px !important;
-    line-height: 1.4 !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
 }
 
 .elementor-element-31f28075 .elementor-icon-list-icon svg {
-    width: 12px !important;
-    height: 12px !important;
+    width: 16px !important;
+    height: 16px !important;
 }
 
-/* Reduce gap between list items */
+/* Adjust gap between list items */
 .elementor-element-31f28075 .elementor-icon-list-item {
-    padding-bottom: 4px !important;
-    margin-bottom: 4px !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 8px !important;
 }
 
 /* Ultra-wide Desktop adjustments for Footer (> 1920px) */
@@ -382,18 +431,22 @@ object {
         max-width: 1600px !important;
         gap: 40px !important;
     }
+
     .elementor-element-31f28075 .elementor-heading-title {
         font-size: 18px !important;
         margin-bottom: 12px !important;
     }
+
     .elementor-element-31f28075 .elementor-icon-list-text,
     .elementor-element-31f28075 .elementor-icon-list-item>a {
         font-size: 15px !important;
     }
+
     .elementor-element-31f28075 .elementor-icon-list-icon svg {
         width: 15px !important;
         height: 15px !important;
     }
+
     .elementor-element-5cc468e0 .elementor-heading-title,
     .elementor-element-5cc468e0 .elementor-icon-list-text {
         font-size: 14px !important;
@@ -503,6 +556,7 @@ article.page,
     padding-bottom: 0 !important;
     margin-bottom: -30px !important;
 }
+
 /* Fix squeezed images in Our Services and icon boxes across all pages */
 .jkit-icon-box .icon img,
 .jkit-icon-box-wrapper .icon img,
@@ -547,7 +601,7 @@ article.page,
 }
 
 /* Fix text boxes over images in Services grids (e.g. Warehousing Page) */
-.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial {
+.elementor-widget-image~.elementor-widget-jkit_icon_box.elementor-widget__width-initial {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
@@ -563,10 +617,10 @@ article.page,
     box-sizing: border-box !important;
 }
 
-.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial .elementor-widget-container,
-.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial .jeg-elementor-kit,
-.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial .jkit-icon-box,
-.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial .jkit-icon-box-wrapper {
+.elementor-widget-image~.elementor-widget-jkit_icon_box.elementor-widget__width-initial .elementor-widget-container,
+.elementor-widget-image~.elementor-widget-jkit_icon_box.elementor-widget__width-initial .jeg-elementor-kit,
+.elementor-widget-image~.elementor-widget-jkit_icon_box.elementor-widget__width-initial .jkit-icon-box,
+.elementor-widget-image~.elementor-widget-jkit_icon_box.elementor-widget__width-initial .jkit-icon-box-wrapper {
     margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
@@ -579,9 +633,10 @@ article.page,
     flex-grow: 1 !important;
 }
 
-.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial .icon-box-body {
+.elementor-widget-image~.elementor-widget-jkit_icon_box.elementor-widget__width-initial .icon-box-body {
     margin: 0 !important;
-    padding: 20px 15px !important; /* Add padding so background sits beautifully below the image */
+    padding: 20px 15px !important;
+    /* Add padding so background sits beautifully below the image */
     width: 100% !important;
     max-width: 100% !important;
     display: flex !important;
@@ -595,9 +650,20 @@ article.page,
     flex-grow: 1 !important;
 }
 
-.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial .title,
-.elementor-widget-image ~ .elementor-widget-jkit_icon_box.elementor-widget__width-initial p {
+.elementor-widget-image~.elementor-widget-jkit_icon_box.elementor-widget__width-initial .title,
+.elementor-widget-image~.elementor-widget-jkit_icon_box.elementor-widget__width-initial p {
     text-align: center !important;
     margin: 0 auto !important;
     width: 100% !important;
+}
+
+/* Fix blue background overlay on Let's Connect section */
+.elementor-76 .elementor-element.elementor-element-4029e0e3::before,
+.elementor-76 .elementor-element.elementor-element-4029e0e3>.elementor-background-video-container::before,
+.elementor-76 .elementor-element.elementor-element-4029e0e3>.e-con-inner>.elementor-background-video-container::before,
+.elementor-76 .elementor-element.elementor-element-4029e0e3>.elementor-background-slideshow::before,
+.elementor-76 .elementor-element.elementor-element-4029e0e3>.e-con-inner>.elementor-background-slideshow::before,
+.elementor-76 .elementor-element.elementor-element-4029e0e3>.elementor-motion-effects-container>.elementor-motion-effects-layer::before {
+    background-color: transparent !important;
+    background-image: linear-gradient(var(--e-global-color-primary));
 }
