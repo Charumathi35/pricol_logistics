@@ -34,7 +34,14 @@ object:not(.elementor-background-video-embed object) {
     display: block;
 }
 
-
+/* Global Banner Fix: Ensure inner page banners show full width instead of cropping on ALL screen sizes */
+.elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a),
+.elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a):not(.elementor-motion-effects-element-type-background),
+.elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a)>.elementor-motion-effects-container>.elementor-motion-effects-layer {
+    background-size: 100% 100% !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
 
 /* Cleaned up aggressive Elementor fixed width resets for columns and containers */
 /* Elements should rely on their natural flex properties instead of global overrides */
@@ -126,6 +133,12 @@ object:not(.elementor-background-video-embed object) {
         width: auto !important;
         object-fit: contain;
     }
+
+    /* Ensure all content has breathing room on large laptops/desktops */
+    .e-con-inner {
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -168,13 +181,10 @@ object:not(.elementor-background-video-embed object) {
         min-height: 70vh !important;
     }
 
-    /* Ensure inner page banners show full width instead of cropping on tablet and mobile */
-    .elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a),
-    .elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a):not(.elementor-motion-effects-element-type-background),
-    .elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a)>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-        background-size: 100% 100% !important;
-        background-position: center center !important;
-        background-repeat: no-repeat !important;
+    /* Ensure all content (logo, menus, text) has breathing room on tablets */
+    .e-con-inner {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
     }
 }
 
@@ -192,11 +202,10 @@ object:not(.elementor-background-video-embed object) {
         height: 100% !important;
     }
 
-    /* Ensure inner page banners show full width instead of cropping */
-    .elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a) {
-        background-size: 100% 100% !important;
-        background-position: center center !important;
-        background-repeat: no-repeat !important;
+    /* Ensure all content (logo, menus, text) has breathing room on mobile */
+    .e-con-inner {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
 }
 
@@ -229,15 +238,6 @@ object:not(.elementor-background-video-embed object) {
         font-size: clamp(30px, 3.5vw, 55px) !important;
         line-height: 1.1 !important;
         max-width: 100% !important;
-    }
-
-    /* Ensure inner page banners show full width instead of cropping on small laptops */
-    .elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a),
-    .elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a):not(.elementor-motion-effects-element-type-background),
-    .elementor[data-elementor-type="wp-page"]>.e-con.e-parent:first-child:not(.elementor-element-518d30e1):not(.elementor-element-3f168f2a)>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-        background-size: 100% 100% !important;
-        background-position: center center !important;
-        background-repeat: no-repeat !important;
     }
 }
 
