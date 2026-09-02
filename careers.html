@@ -2490,7 +2490,7 @@
                                     <div class="jeg-elementor-kit jkit-nav-menu break-point-tablet submenu-click-title jeg_module_213__6a86cd33284ad"
                                         data-item-indicator=""><button aria-label="open-menu"
                                             class="jkit-hamburger-menu"><i aria-hidden="true"
-                                                class="jki jki-burger-menu-light"></i></button>
+                                                class="fas fa-bars"></i></button>
                                         <div class="jkit-menu-wrapper">
                                             <div class="jkit-menu-container">
                                                 <ul id="menu-main-menu"
@@ -2623,7 +2623,7 @@
                                                     </li>
                                                     <li id="menu-item-221"
                                                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-221">
-                                                        <a href="#">Contact Us</a>
+                                                        <a href="#">Enquire Now</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -2865,11 +2865,9 @@
                                                                 placeholder="${ parent.decodeEntities(`Full name here`) } "
                                                                 oninput="${parent.handleChange}"
                                                                 onblur="${parent.handleChange}"
-                                                                aria-invalid="${validation.errors['mf-first-name']" :
-                                                                ref="${el">{
-                                                            parent.activateValidation({"message":"This field is
-                                                            required.","minLength":1,"maxLength":"","type":"none","required":true,"expression":"null"},
-                                                            el)
+                                                                aria-invalid="${validation.errors['mf-first-name'] ? true : false}"
+                                                                ref="${el => {
+                                                            parent.activateValidation({"message":"This field is required.","minLength":1,"maxLength":"","type":"none","required":true,"expression":"null"}, el)
                                                             }}
                                                             /&gt;
 
@@ -2902,12 +2900,8 @@
                                                                 placeholder="${ parent.decodeEntities(`Add email`) } "
                                                                 onblur="${parent.handleChange}"
                                                                 onfocus="${parent.handleChange}"
-                                                                aria-invalid="${validation.errors['mf-email']" :
-                                                                ref="${el="> parent.activateValidation({"message":"This
-                                                            field is required.","emailMessage":"Please enter a valid
-                                                            Email
-                                                            address","minLength":1,"maxLength":"","type":"none","required":true,"expression":"null"},
-                                                            el)}
+                                                                aria-invalid="${validation.errors['mf-email'] ? true : false}"
+                                                                ref="${el => { parent.activateValidation({"message":"This field is required.","emailMessage":"Please enter a valid Email address","minLength":1,"maxLength":"","type":"none","required":true,"expression":"null"}, el) }}"
                                                             /&gt;
 
                                                             &lt;${validation.ErrorMessage}
@@ -2938,12 +2932,10 @@
                                                                 placeholder="${ parent.decodeEntities(`Add Phone Number`) } "
                                                                 oninput="${parent.handleChange}"
                                                                 onblur="${parent.handleChange}"
-                                                                aria-invalid="${validation.errors['mf-phone-number']" :
-                                                                ref="${el">{
-                                                            parent.activateValidation({"message":"This field is
-                                                            required.","minLength":1,"maxLength":"","type":"none","required":true,"expression":"null"},
-                                                            el)
-                                                            }}
+                                                                aria-invalid="${validation.errors['mf-phone-number'] ? true : false}"
+                                                                ref="${el => {
+                                                            parent.activateValidation({"message":"This field is required.","minLength":1,"maxLength":"","type":"none","required":true,"expression":"null"}, el)
+                                                            }}"
                                                             /&gt;
 
                                                             &lt;${validation.ErrorMessage}
@@ -3026,75 +3018,6 @@
 
                                                             &lt;${validation.ErrorMessage}
                                                             errors=${validation.errors}
-                                                            name="mf-select"
-                                                            as=${html`<span classname="mf-error-message"></span>`}
-                                                            /&gt;
-                                                        </div>
-
-
-                                                    </div>
-                                                </div>
-                                                <div classname="elementor-element elementor-element-66dc7fb elementor-widget elementor-widget-mf-file-upload"
-                                                    data-id="66dc7fb" data-element_type="widget" data-e-type="widget"
-                                                    data-settings='{"mf_input_name":"mf-file-upload"}'
-                                                    data-widget_type="mf-file-upload.default">
-                                                    <div classname="elementor-widget-container">
-
-
-                                                        <div classname="mf-input-wrapper">
-                                                            <label classname="mf-input-label"
-                                                                htmlfor="mf-input-file-upload-66dc7fb">
-                                                                ${ parent.decodeEntities(`File Upload`) } <span
-                                                                    classname="mf-input-required-indicator">*</span>
-                                                            </label>
-
-                                                            <div
-                                                                classname="mf-file-upload-container multi-option-input-type">
-                                                                <input type="file"
-                                                                    classname="mf-input mf-input-file-upload "
-                                                                    id="mf-input-file-upload-66dc7fb"
-                                                                    name="mf-file-upload"
-                                                                    accept=".jpg, .jpeg, .gif, .png" oninput="${"
-                                                                    parent.handlefileupload
-                                                                    aria-invalid="${validation.errors['mf-file-upload']"
-                                                                    : ref="${" el="">
-                                                                parent.activateValidation({"message":"This field is
-                                                                required.","required":true,"file_types":[".jpg",".jpeg",".gif",".png"],"type_message":"Invalid
-                                                                file extension","size_limit":-1,"limit_message":"This
-                                                                field is required."}, el) }
-                                                                /&gt;
-                                                                <label htmlfor="mf-input-file-upload-66dc7fb"
-                                                                    classname="mf-input-file-upload-label metform-btn">
-                                                                    <span>${ parent.decodeEntities(`Choose a file`) }
-                                                                    </span> </label>
-                                                                <div classname="mf-file-name">
-                                                                    ${
-                                                                    (parent.state.formData['mf-file-upload'] ||
-                                                                    []).length &gt; 0
-                                                                    ? parent.state.formData['mf-file-upload'].map((file,
-                                                                    idx) =&gt; html`
-                                                                    <span classname="mf-file-name-item" key="${idx}">
-                                                                        <span>${file.name}</span>
-                                                                        <span classname="mf-file-remove" onclick="${()">
-                                                                            parent.removeUploadedFile('mf-file-upload',
-                                                                            idx)}
-                                                                            title="Remove"
-                                                                            &gt;
-                                                                            <label
-                                                                                classname="mf-file-cross">&times;</label>
-                                                                        </span>
-                                                                    </span>
-                                                                    `)
-                                                                    : html`<span>${parent.getFileLabel('mf-file-upload',
-                                                                        'No file chosen.')}</span>`
-                                                                    }
-                                                                </div>
-
-                                                            </div>
-
-                                                            &lt;${validation.ErrorMessage}
-                                                            errors=${validation.errors}
-                                                            name="mf-file-upload"
                                                             as=${html`<span classname="mf-error-message"></span>`}
                                                             /&gt;
 
@@ -3183,7 +3106,7 @@
                         data-settings='{"_transform_rotateZ_effect":{"unit":"px","size":-89,"sizes":[]},"_transform_rotateZ_effect_tablet":{"unit":"deg","size":"","sizes":[]},"_transform_rotateZ_effect_mobile":{"unit":"deg","size":"","sizes":[]}}'
                         data-widget_type="heading.default">
                         <div class="elementor-widget-container">
-                            <h2 class="elementor-heading-title elementor-size-default">Contact us</h2>
+                            <h2 class="elementor-heading-title elementor-size-default">Enquire Now</h2>
                         </div>
                     </div>
                     <div class="elementor-element elementor-element-74f90b68 elementor-widget__width-initial elementor-widget elementor-widget-heading"
@@ -3244,7 +3167,7 @@
 								class="attachment-full size-full wp-image-1147" alt="">
 						</div>
 					</div>
-					<div style="display:flex; align-items:center; gap:10px; margin-top:15px;">
+					<div style="display:flex; align-items:center; gap:10px; margin-top:0px;">
 						<div class="elementor-element elementor-element-faa69f1 elementor-shape-square elementor-grid-0 elementor-widget elementor-widget-social-icons"
 							data-id="faa69f1" data-element_type="widget" data-e-type="widget"
 							data-widget_type="social-icons.default">
@@ -3268,7 +3191,7 @@
 						data-id="7d047cc" data-element_type="widget" data-e-type="widget"
 						data-widget_type="heading.default">
 						<div class="elementor-widget-container">
-							<h4 class="elementor-heading-title elementor-size-default">Contact Us</h4>
+							<h4 class="elementor-heading-title elementor-size-default">Enquire Now</h4>
 						</div>
 					</div>
 					<div class="elementor-element elementor-element-4a14c3a elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
@@ -3367,7 +3290,7 @@
 								<li class="elementor-icon-list-item">
 									<span class="elementor-icon-list-icon">
 										<svg aria-hidden="true" class="e-font-icon-svg e-fas-chevron-right" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg" style="width: 0.6em; height: 0.6em; fill: currentColor; vertical-align: middle;"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.568 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.568-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg> </span>
-									<span class="elementor-icon-list-text">Contact Us</span>
+									<span class="elementor-icon-list-text">Enquire Now</span>
 								</li>
 								<li class="elementor-icon-list-item">
 									<span class="elementor-icon-list-icon">
@@ -4019,3 +3942,4 @@
 </body>
 
 </html>
+

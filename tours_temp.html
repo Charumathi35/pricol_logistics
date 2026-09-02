@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours - NovaJourneys</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling for the full-screen immersive experience */
+            background: #0f172a;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .tour-immersive-wrapper {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            color: white;
+            overflow: hidden;
+        }
+
+        .tour-bg-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .tour-bg-layer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.8s ease;
+        }
+
+        .tour-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.4) 50%, rgba(15, 23, 42, 0.1) 100%);
+            z-index: 1;
+        }
+
+        .tour-content-grid {
+            position: absolute;
+            inset: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            padding-top: 80px; /* space for navbar */
+        }
+
+        .tour-left {
+            flex: 0 0 45%;
+            padding-right: 40px;
+            position: relative;
+        }
+
+        .tour-title {
+            font-size: clamp(4rem, 7vw, 7rem);
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            text-transform: uppercase;
+        }
+
+        .tour-desc {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            max-width: 500px;
+        }
+
+        .tour-controls {
+            display: flex;
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .control-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: white;
+            color: #0f172a;
+        }
+
+        .tour-watermark {
+            position: absolute;
+            bottom: -80px;
+            left: 0;
+            font-size: 10rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.05);
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            z-index: -1;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .tour-right {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .tour-carousel {
+            display: flex;
+            gap: 25px;
+            position: absolute;
+            left: 0;
+            transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .tour-card-wrapper {
+            width: 260px;
+            height: 380px;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: transform 0.4s ease;
+        }
+
+        .tour-card-wrapper:hover {
+            transform: translateY(-10px);
+        }
+
+        .tour-card-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tour-card-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            z-index: 2;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%);
+        }
+
+        .tour-card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+            color: white;
+        }
+
+        .tour-card-rating {
+            color: #fbbf24;
+            font-size: 0.8rem;
+            display: flex;
+            gap: 2px;
+            margin-top: 5px;
+        }
+
+        .bookmark-icon {
+            width: 35px;
+            height: 35px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0f172a;
+            font-size: 1.1rem;
+        }
+
+        /* Animation classes for text */
+        .text-animate-out {
+            animation: slideUpOut 0.5s forwards cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .text-animate-in {
+            animation: slideUpIn 0.5s forwards cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        @keyframes slideUpOut {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-40px); opacity: 0; }
+        }
+
+        @keyframes slideUpIn {
+            0% { transform: translateY(40px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Flying Clone Animation */
+        .flying-clone {
+            position: fixed;
+            z-index: 5; /* Above bg overlay, below text */
+            border-radius: 20px;
+            object-fit: cover;
+            transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        
+        .flying-clone.expand {
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" style="background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); position: fixed; box-shadow: 0 4px 30px rgba(0,0,0,0.1);">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="ri-compass-3-fill"></i> NovaJourneys.
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="tours.html" class="active">Tours</a></li>
+                <li><a href="index.html#reviews">Reviews</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="btn-ghost">Log in</a>
+                <a href="#" class="btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Immersive Tour Design -->
+    <div class="tour-immersive-wrapper">
+        <div class="tour-bg-layer">
+            <img src="" id="mainBgImg" alt="Background">
+            <div class="tour-overlay"></div>
+        </div>
+        
+        <div class="tour-content-grid">
+            <div class="tour-left">
+                <h1 class="tour-title" id="mainTitle"></h1>
+                <p class="tour-desc" id="mainDesc"></p>
+                <a href="#" class="btn-primary" style="border-radius: 30px; padding: 12px 30px; font-weight: 600; display: inline-flex; align-items: center; gap: 10px;">
+                    Explore <i class="ri-arrow-right-line"></i>
+                </a>
+                
+                <div class="tour-controls">
+                    <button class="control-btn" id="prevBtn"><i class="ri-arrow-left-line"></i></button>
+                    <button class="control-btn" id="nextBtn"><i class="ri-arrow-right-line"></i></button>
+                </div>
+                
+                <div class="tour-watermark" id="mainWatermark"></div>
+            </div>
+
+            <div class="tour-right">
+                <div class="tour-carousel" id="carouselTrack">
+                    <!-- Cards injected by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Tour Data
+        const tours = [
+            {
+                title: "INDONESIA",
+                desc: "As the largest archipelago country in the world, Indonesia is blessed with so many different people, cultures, customs, traditions, artworks, food, animals, plants, landscapes, and everything that made it almost like 100 (or even 200) countries melted beautifully into one.",
+                img: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=2000&q=80"
+            },
+            {
+                title: "THAILAND",
+                desc: "Thailand is a Southeast Asian country. It's known for tropical beaches, opulent royal palaces, ancient ruins and ornate temples displaying figures of Buddha. In Bangkok, the capital, an ultramodern cityscape rises next to quiet canalside communities.",
+                img: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=2000&q=80"
+            },
+            {
+                title: "BALI",
+                desc: "Bali is an Indonesian island known for its forested volcanic mountains, iconic rice paddies, beaches and coral reefs. The island is home to religious sites such as cliffside Uluwatu Temple. To the south, the beachside city of Kuta has lively bars.",
+                img: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=2000&q=80"
+            },
+            {
+                title: "KERALA",
+                desc: "Kerala, a state on India's tropical Malabar Coast, has nearly 600km of Arabian Sea shoreline. It's known for its palm-lined beaches and backwaters, a network of canals. Inland are the Western Ghats, mountains whose slopes support tea, coffee and spice plantations.",
+                img: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=2000&q=80"
+            },
+            {
+                title: "DUBAI",
+                desc: "Dubai is a city and emirate in the United Arab Emirates known for luxury shopping, ultramodern architecture and a lively nightlife scene. Burj Khalifa, an 830m-tall tower, dominates the skyscraper-filled skyline.",
+                img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=2000&q=80"
+            }
+        ];
+
+        let currentIndex = 0;
+        let isAnimating = false;
+
+        const mainBgImg = document.getElementById('mainBgImg');
+        const mainTitle = document.getElementById('mainTitle');
+        const mainDesc = document.getElementById('mainDesc');
+        const mainWatermark = document.getElementById('mainWatermark');
+        const carouselTrack = document.getElementById('carouselTrack');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+
+        // Helper to get card HTML
+        function getCardHTML(tour) {
+            return `
+                <div class="tour-card-wrapper">
+                    <img src="${tour.img}" alt="${tour.title}">
+                    <div class="tour-card-info">
+                        <div>
+                            <h3 class="tour-card-title">${tour.title}</h3>
+                            <div class="tour-card-rating">
+                                <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-line"></i>
+                            </div>
+                        </div>
+                        <div class="bookmark-icon"><i class="ri-bookmark-fill"></i></div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Initialize state
+        function init() {
+            // Set initial background and text
+            const currentTour = tours[currentIndex];
+            mainBgImg.src = currentTour.img;
+            mainTitle.textContent = currentTour.title;
+            mainDesc.textContent = currentTour.desc;
+            mainWatermark.textContent = currentTour.title;
+
+            // Render next 4 cards
+            carouselTrack.innerHTML = '';
+            for (let i = 1; i <= 4; i++) {
+                const tour = tours[(currentIndex + i) % tours.length];
+                carouselTrack.insertAdjacentHTML('beforeend', getCardHTML(tour));
+            }
+        }
+
+        // Animate text change
+        function animateText(newTour) {
+            mainTitle.classList.add('text-animate-out');
+            mainDesc.classList.add('text-animate-out');
+            mainWatermark.classList.add('text-animate-out');
+
+            setTimeout(() => {
+                mainTitle.textContent = newTour.title;
+                mainDesc.textContent = newTour.desc;
+                mainWatermark.textContent = newTour.title;
+
+                mainTitle.classList.remove('text-animate-out');
+                mainDesc.classList.remove('text-animate-out');
+                mainWatermark.classList.remove('text-animate-out');
+
+                mainTitle.classList.add('text-animate-in');
+                mainDesc.classList.add('text-animate-in');
+                mainWatermark.classList.add('text-animate-in');
+
+                setTimeout(() => {
+                    mainTitle.classList.remove('text-animate-in');
+                    mainDesc.classList.remove('text-animate-in');
+                    mainWatermark.classList.remove('text-animate-in');
+                }, 500);
+            }, 500);
+        }
+
+        // Next Button Logic
+        nextBtn.addEventListener('click', () => {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const cards = carouselTrack.querySelectorAll('.tour-card-wrapper');
+            const firstCard = cards[0];
+            const firstCardImg = firstCard.querySelector('img');
+            
+            // Get position of the first card image
+            const rect = firstCardImg.getBoundingClientRect();
+
+            // Create flying clone
+            const clone = document.createElement('img');
+            clone.src = firstCardImg.src;
+            clone.className = 'flying-clone';
+            clone.style.top = `${rect.top}px`;
+            clone.style.left = `${rect.left}px`;
+            clone.style.width = `${rect.width}px`;
+            clone.style.height = `${rect.height}px`;
+            
+            document.body.appendChild(clone);
+
+            // Hide the actual image in the card so it looks like it popped out
+            firstCardImg.style.opacity = '0';
+
+            // Trigger reflow
+            void clone.offsetWidth;
+
+            // Start flying animation (expand to full screen)
+            clone.classList.add('expand');
+
+            // Slide carousel left
+            const cardWidth = 260;
+            const gap = 25;
+            carouselTrack.style.transform = `translateX(-${cardWidth + gap}px)`;
+
+            // Update Text
+            currentIndex = (currentIndex + 1) % tours.length;
+            const nextTour = tours[currentIndex];
+            animateText(nextTour);
+
+            // Wait for animation to finish
+            setTimeout(() => {
+                // Update actual background
+                mainBgImg.src = nextTour.img;
+                
+                // Cleanup clone
+                clone.remove();
+
+                // Remove the first card from DOM
+                firstCard.remove();
+
+                // Append new card at the end
+                const newCardIndex = (currentIndex + 4) % tours.length;
+                carouselTrack.insertAdjacentHTML('beforeend', getCardHTML(tours[newCardIndex]));
+
+                // Reset carousel position instantly without animation
+                carouselTrack.style.transition = 'none';
+                carouselTrack.style.transform = 'translateX(0)';
+                
+                // Restore transition for next time
+                setTimeout(() => {
+                    carouselTrack.style.transition = 'transform 0.8s cubic-bezier(0.77, 0, 0.175, 1)';
+                    isAnimating = false;
+                }, 50);
+
+            }, 800); // 800ms matches the CSS transition time
+        });
+
+        // Prev Button Logic (Simplified Reverse)
+        prevBtn.addEventListener('click', () => {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            currentIndex = (currentIndex - 1 + tours.length) % tours.length;
+            const prevTour = tours[currentIndex];
+            
+            // Animate Text
+            animateText(prevTour);
+
+            // For prev, we prepend a card, shift left instantly, then animate to 0
+            const newCardHTML = getCardHTML(tours[(currentIndex + 1) % tours.length]);
+            carouselTrack.insertAdjacentHTML('afterbegin', newCardHTML);
+            
+            // Remove last card
+            carouselTrack.lastElementChild.remove();
+
+            const cardWidth = 260;
+            const gap = 25;
+            
+            carouselTrack.style.transition = 'none';
+            carouselTrack.style.transform = `translateX(-${cardWidth + gap}px)`;
+            
+            // Trigger reflow
+            void carouselTrack.offsetWidth;
+
+            carouselTrack.style.transition = 'transform 0.8s cubic-bezier(0.77, 0, 0.175, 1)';
+            carouselTrack.style.transform = 'translateX(0)';
+            
+            // Just update background instantly for prev (simpler than full reverse flight)
+            mainBgImg.src = prevTour.img;
+
+            setTimeout(() => {
+                isAnimating = false;
+            }, 800);
+        });
+
+        init();
+    </script>
+</body>
+</html>
