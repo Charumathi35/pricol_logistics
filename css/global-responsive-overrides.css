@@ -43,6 +43,78 @@ object:not(.elementor-background-video-embed object) {
     background-repeat: no-repeat !important;
 }
 
+/* ============================================================
+   GLOBAL BANNER HEIGHT NORMALIZER
+   Enforce identical min-height on ALL page banner containers
+   so every page banner looks the same height across the site.
+   Element IDs mapped:
+     5045df6e → Sea Freight (ocean-freight.html)
+     4d66946e → Air Freight (air-freight.html)
+     1c33e6f3 → Automotive  (automative.html)
+     4700a098 → Inland Transportation (inland-transportation.html)
+     21d9713a → Warehousing & 3PL (warehousing-3pl.html)
+     600a7cba → Sustainability (sustainability.html)
+     30bf14f8 → Company Overview (company-overview.html)
+============================================================ */
+.elementor-element-5045df6e,
+.elementor-element-4d66946e,
+.elementor-element-1c33e6f3,
+.elementor-element-4700a098,
+.elementor-element-21d9713a,
+.elementor-element-600a7cba,
+.elementor-element-30bf14f8 {
+    min-height: 520px !important;
+    box-sizing: border-box !important;
+}
+
+@media (max-width: 1366px) {
+    .elementor-element-5045df6e,
+    .elementor-element-4d66946e,
+    .elementor-element-1c33e6f3,
+    .elementor-element-4700a098,
+    .elementor-element-21d9713a,
+    .elementor-element-600a7cba,
+    .elementor-element-30bf14f8 {
+        min-height: 460px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .elementor-element-5045df6e,
+    .elementor-element-4d66946e,
+    .elementor-element-1c33e6f3,
+    .elementor-element-4700a098,
+    .elementor-element-21d9713a,
+    .elementor-element-600a7cba,
+    .elementor-element-30bf14f8 {
+        min-height: 380px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .elementor-element-5045df6e,
+    .elementor-element-4d66946e,
+    .elementor-element-1c33e6f3,
+    .elementor-element-4700a098,
+    .elementor-element-21d9713a,
+    .elementor-element-600a7cba,
+    .elementor-element-30bf14f8 {
+        min-height: 280px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .elementor-element-5045df6e,
+    .elementor-element-4d66946e,
+    .elementor-element-1c33e6f3,
+    .elementor-element-4700a098,
+    .elementor-element-21d9713a,
+    .elementor-element-600a7cba,
+    .elementor-element-30bf14f8 {
+        min-height: 220px !important;
+    }
+}
+
 /* Cleaned up aggressive Elementor fixed width resets for columns and containers */
 /* Elements should rely on their natural flex properties instead of global overrides */
 
