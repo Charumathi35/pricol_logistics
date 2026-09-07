@@ -9608,6 +9608,30 @@
 
 	<link rel="stylesheet" id="widget-social-icons-css" href="./css/widget-social-icons.min.css" media="all">
 	<link rel="stylesheet" id="widget-spacer-css" href="./css/widget-spacer.min.css" media="all">
+	<!-- Our Services Alignment Fix -->
+	<style>
+		.e-con.e-child>.elementor-widget-image+.elementor-widget-jkit_icon_box {
+			flex-grow: 1;
+			display: flex;
+		}
+
+		.e-con.e-child>.elementor-widget-image+.elementor-widget-jkit_icon_box .elementor-widget-container,
+		.e-con.e-child>.elementor-widget-image+.elementor-widget-jkit_icon_box .jkit-icon-box {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
+
+		.e-con.e-child>.elementor-widget-image:has(+ .elementor-widget-jkit_icon_box) img {
+			aspect-ratio: 4 / 3 !important;
+			height: 100% !important;
+			object-fit: fill !important;
+			width: 100% !important;
+			display: block;
+			object-position: bottom !important;
+		}
+	</style>
 </head>
 
 <body
@@ -9660,14 +9684,15 @@
 															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232">
 															<a href="company-overview.html">Company Overview</a>
 														</li>
-														<li id="menu-item-238"
+														<!-- <li id="menu-item-238"
 															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-238">
 															<a href="#">Global Network</a>
-														</li>
-														<!-- <li id="menu-item-244"
-															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-244">
-															<a href="#">Pricol Group</a>
 														</li> -->
+														<li id="menu-item-244"
+															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-244">
+															<a href="pricol-group.html">Vision, Mission & Core
+																Values</a>
+														</li>
 													</ul>
 												</li>
 												<li id="menu-item-371"

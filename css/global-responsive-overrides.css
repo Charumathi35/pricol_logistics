@@ -629,9 +629,7 @@ article.page,
 }
 
 /* Hide old ElementsKit footer to remove white space above new footer */
-.ekit-template-content-footer {
-    display: none !important;
-}
+/* Footer visibility restored */
 
 /* Reduce top space of Industry Sector section on index page */
 .elementor-element-2f32c441 {
