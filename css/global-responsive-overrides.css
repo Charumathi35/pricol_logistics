@@ -288,7 +288,7 @@ object:not(.elementor-background-video-embed object) {
 
 /* Make the hero section fit exactly 100vh height and ensure background fits */
 .elementor-element-518d30e1 {
-	min-height: 100vh !important;
+	min-height: 50vh !important;
 	background-size: cover !important;
 	background-position: center !important;
 }
@@ -656,6 +656,59 @@ article.page,
 	object-fit: contain !important;
 }
 
+/* Unified fix for "Our Services" and "Our Solutions" image grids across Air, Ocean, Warehousing, and Inland pages */
+.elementor-266 .elementor-element-7b69e4a5 .e-con-child,
+.elementor-254 .elementor-element-3655e568 .e-con-child,
+.elementor-272 .elementor-element-4e9a7e3a .e-con-child,
+.elementor-260 .elementor-element-1e3d373b .e-con-child,
+.elementor-260 .elementor-element-7bc54d11 .e-con-child {
+	display: flex !important;
+	flex-direction: column !important;
+	justify-content: flex-start !important;
+	align-items: stretch !important;
+}
+
+/* Force the image containers to exactly 240px height */
+.elementor-266 .elementor-element-7b69e4a5 .elementor-widget-image,
+.elementor-254 .elementor-element-3655e568 .elementor-widget-image,
+.elementor-272 .elementor-element-4e9a7e3a .elementor-widget-image,
+.elementor-260 .elementor-element-1e3d373b .elementor-widget-image,
+.elementor-260 .elementor-element-7bc54d11 .elementor-widget-image {
+	height: 240px !important;
+	min-height: 240px !important;
+	max-height: 240px !important;
+	flex: 0 0 240px !important;
+	width: 100% !important;
+}
+
+/* Ensure the image fills the 240px container */
+.elementor-266 .elementor-element-7b69e4a5 .elementor-widget-image img,
+.elementor-254 .elementor-element-3655e568 .elementor-widget-image img,
+.elementor-272 .elementor-element-4e9a7e3a .elementor-widget-image img,
+.elementor-260 .elementor-element-1e3d373b .elementor-widget-image img,
+.elementor-260 .elementor-element-7bc54d11 .elementor-widget-image img {
+	height: 100% !important;
+	width: 100% !important;
+	object-fit: cover !important;
+	object-position: center center !important;
+}
+
+/* Force the icon boxes (titles) to stretch and fill remaining space, perfectly aligning their bottoms */
+.elementor-266 .elementor-element-7b69e4a5 .elementor-widget-jkit_icon_box,
+.elementor-254 .elementor-element-3655e568 .elementor-widget-jkit_icon_box,
+.elementor-272 .elementor-element-4e9a7e3a .elementor-widget-jkit_icon_box,
+.elementor-260 .elementor-element-1e3d373b .elementor-widget-jkit_icon_box,
+.elementor-260 .elementor-element-7bc54d11 .elementor-widget-jkit_icon_box {
+	flex-grow: 1 !important;
+	display: flex !important;
+	flex-direction: column !important;
+}
+
+/* Center items in the last row of the Services grid on Air Freight page */
+.elementor-266 .elementor-element-6ec588bb {
+	justify-content: center !important;
+}
+
 /* ==========================================================================
    Standardized Media Queries for Device Sizes
    ========================================================================== */
@@ -687,7 +740,7 @@ article.page,
 	/* Hero / Banner sections - reduce padding so text isn't pushed too low */
 	.elementor-element-518d30e1,
 	.elementor-element-3f168f2a {
-		min-height: 60vh !important;
+		min-height: 50vh !important;
 	}
 
 	/* Page-specific banner containers on inner pages */
@@ -722,7 +775,7 @@ article.page,
 	/* ---- HERO BANNER FIXES ---- */
 	/* Home page hero */
 	.elementor-element-518d30e1 {
-		min-height: 55vh !important;
+		min-height: 50vh !important;
 		background-position: center center !important;
 	}
 
@@ -1687,7 +1740,7 @@ i.fas {
 
 .elementor-187 .elementor-element.elementor-element-518d30e1 {
 	--display: flex;
-	--min-height: 0vh;
+	--min-height: 50vh;
 	--flex-direction: row;
 	--container-widget-width: calc((1 - var(--container-widget-flex-grow)) * 100%);
 	--container-widget-height: 100%;

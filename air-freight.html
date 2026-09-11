@@ -121,7 +121,7 @@
 			--e-global-typography-accent-text-decoration: none;
 			--e-global-typography-accent-letter-spacing: 1px;
 			--e-global-typography-887363b-font-family: "Manrope";
-			--e-global-typography-887363b-font-size: 28px;
+			--e-global-typography-887363b-font-size: 40px;
 			--e-global-typography-887363b-font-weight: 600;
 			--e-global-typography-887363b-text-transform: none;
 			--e-global-typography-887363b-line-height: 1.4em;
@@ -1758,8 +1758,8 @@
 		}
 
 		.elementor-266 .elementor-element.elementor-element-6c9ea829 img {
-			width: 100%;
-			height: 240px;
+			width: 100% !important;
+			height: 240px !important;
 		}
 
 		.elementor-266 .elementor-element.elementor-element-1a9736b5.jkit-equal-height-enable,
@@ -1845,8 +1845,8 @@
 		}
 
 		.elementor-266 .elementor-element.elementor-element-3a8aee31 img {
-			width: 100%;
-			height: 240px;
+			width: 100% !important;
+			height: 240px !important;
 		}
 
 		.elementor-266 .elementor-element.elementor-element-5a3b1345.jkit-equal-height-enable,
@@ -1932,8 +1932,8 @@
 		}
 
 		.elementor-266 .elementor-element.elementor-element-b6521a5 img {
-			width: 100%;
-			height: 240px;
+			width: 100% !important;
+			height: 240px !important;
 		}
 
 		.elementor-266 .elementor-element.elementor-element-2d101ee8.jkit-equal-height-enable,
@@ -2019,8 +2019,8 @@
 		}
 
 		.elementor-266 .elementor-element.elementor-element-432040d4 img {
-			width: 100%;
-			height: 240px;
+			width: 100% !important;
+			height: 240px !important;
 		}
 
 		.elementor-266 .elementor-element.elementor-element-27e910d1.jkit-equal-height-enable,
@@ -2106,8 +2106,8 @@
 		}
 
 		.elementor-266 .elementor-element.elementor-element-6c71ea45 img {
-			width: 100%;
-			height: 240px;
+			width: 100% !important;
+			height: 240px !important;
 		}
 
 		.elementor-266 .elementor-element.elementor-element-67e08a6a.jkit-equal-height-enable,
@@ -2193,8 +2193,8 @@
 		}
 
 		.elementor-266 .elementor-element.elementor-element-201140b7 img {
-			width: 100%;
-			height: 240px;
+			width: 100% !important;
+			height: 240px !important;
 		}
 
 		.elementor-266 .elementor-element.elementor-element-256d7c3b.jkit-equal-height-enable,
@@ -2280,8 +2280,8 @@
 		}
 
 		.elementor-266 .elementor-element.elementor-element-13ed402b img {
-			width: 100%;
-			height: 240px;
+			width: 100% !important;
+			height: 240px !important;
 		}
 
 		.elementor-266 .elementor-element.elementor-element-3680c3fe.jkit-equal-height-enable,
@@ -2357,9 +2357,9 @@
 			--container-widget-align-self: initial;
 			--flex-wrap-mobile: wrap;
 			--justify-content: space-between;
-			--gap: 10px 10px;
-			--row-gap: 10px;
-			--column-gap: 10px;
+			--gap: 20px 20px;
+			--row-gap: 20px;
+			--column-gap: 20px;
 		}
 
 		.elementor-266 .elementor-element.elementor-element-fcb99ea>.elementor-widget-container {
@@ -2367,8 +2367,8 @@
 		}
 
 		.elementor-266 .elementor-element.elementor-element-fcb99ea img {
-			width: 100%;
-			height: 240px;
+			width: 100% !important;
+			height: 240px !important;
 		}
 
 		.elementor-266 .elementor-element.elementor-element-065ab81.jkit-equal-height-enable,
@@ -3905,7 +3905,7 @@
 			--e-global-typography-accent-text-decoration: none;
 			--e-global-typography-accent-letter-spacing: 1px;
 			--e-global-typography-887363b-font-family: "Manrope";
-			--e-global-typography-887363b-font-size: 28px;
+			--e-global-typography-887363b-font-size: 40px;
 			--e-global-typography-887363b-font-weight: 600;
 			--e-global-typography-887363b-text-transform: none;
 			--e-global-typography-887363b-line-height: 1.4em;
@@ -7227,7 +7227,7 @@
 
 		.elementor-76 .elementor-element.elementor-element-faa69f1 {
 			--grid-template-columns: repeat(0, auto);
-			--icon-size: 13px;
+			--icon-size: 9px;
 			--grid-column-gap: 15px;
 			--grid-row-gap: 0px;
 		}
@@ -9608,30 +9608,6 @@
 
 	<link rel="stylesheet" id="widget-social-icons-css" href="./css/widget-social-icons.min.css" media="all">
 	<link rel="stylesheet" id="widget-spacer-css" href="./css/widget-spacer.min.css" media="all">
-	<!-- Our Services Alignment Fix -->
-	<style>
-		.e-con.e-child>.elementor-widget-image+.elementor-widget-jkit_icon_box {
-			flex-grow: 1;
-			display: flex;
-		}
-
-		.e-con.e-child>.elementor-widget-image+.elementor-widget-jkit_icon_box .elementor-widget-container,
-		.e-con.e-child>.elementor-widget-image+.elementor-widget-jkit_icon_box .jkit-icon-box {
-			flex-grow: 1;
-			display: flex;
-			flex-direction: column;
-			height: 100%;
-		}
-
-		.e-con.e-child>.elementor-widget-image:has(+ .elementor-widget-jkit_icon_box) img {
-			aspect-ratio: 4 / 3 !important;
-			height: 100% !important;
-			object-fit: fill !important;
-			width: 100% !important;
-			display: block;
-			object-position: bottom !important;
-		}
-	</style>
 </head>
 
 <body
@@ -9951,7 +9927,7 @@
 						</div>
 						<div class="elementor-element elementor-element-32922ad0 e-con-full e-flex e-con e-child"
 							data-id="32922ad0" data-element_type="container" data-e-type="container">
-							<div class="elementor-element elementor-element-752e5049 elementor-widget__width-initial elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+							<!-- <div class="elementor-element elementor-element-752e5049 elementor-widget__width-initial elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
 								data-id="752e5049" data-element_type="widget" data-e-type="widget"
 								data-widget_type="divider.default">
 								<div class="elementor-widget-container">
@@ -9960,7 +9936,7 @@
 										</span>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<div class="elementor-element elementor-element-caac51e elementor-widget elementor-widget-heading"
 								data-id="caac51e" data-element_type="widget" data-e-type="widget"
 								data-widget_type="heading.default">
@@ -9991,7 +9967,7 @@
 						</div>
 						<div class="elementor-element elementor-element-6d144abe e-con-full e-flex e-con e-child"
 							data-id="6d144abe" data-element_type="container" data-e-type="container">
-							<div class="elementor-element elementor-element-7465bac6 elementor-widget__width-initial elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+							<!-- <div class="elementor-element elementor-element-7465bac6 elementor-widget__width-initial elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
 								data-id="7465bac6" data-element_type="widget" data-e-type="widget"
 								data-widget_type="divider.default">
 								<div class="elementor-widget-container">
@@ -10000,7 +9976,7 @@
 										</span>
 									</div>
 								</div>
-							</div>
+							</div> -->
 							<div class="elementor-element elementor-element-5bf0c6d4 elementor-widget elementor-widget-heading"
 								data-id="5bf0c6d4" data-element_type="widget" data-e-type="widget"
 								data-widget_type="heading.default">
@@ -10081,7 +10057,7 @@
 			<div class="e-con-inner">
 				<div class="elementor-element elementor-element-6ec588bb e-con-full e-flex e-con e-child"
 					data-id="6ec588bb" data-element_type="container" data-e-type="container">
-					<div class="elementor-element elementor-element-75a38ad9 elementor-widget__width-initial elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+					<!-- <div class="elementor-element elementor-element-75a38ad9 elementor-widget__width-initial elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
 						data-id="75a38ad9" data-element_type="widget" data-e-type="widget"
 						data-widget_type="divider.default">
 						<div class="elementor-widget-container">
@@ -10090,7 +10066,7 @@
 								</span>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="elementor-element elementor-element-1cead3d6 elementor-widget elementor-widget-heading"
 						data-id="1cead3d6" data-element_type="widget" data-e-type="widget"
 						data-widget_type="heading.default">
@@ -10112,12 +10088,9 @@
 						data-id="6c9ea829" data-element_type="widget" data-e-type="widget"
 						data-widget_type="image.default">
 						<div class="elementor-widget-container">
-							<figure class="wp-caption">
-								<img loading="lazy" decoding="async" width="1617" height="973"
-									src="./images/1-INTERNATIONAL-AIR-FREIGHT-copy.png"
-									class="attachment-full size-full wp-image-764" alt="">
-								<figcaption class="widget-image-caption wp-caption-text"></figcaption>
-							</figure>
+							<img loading="lazy" decoding="async" width="1617" height="973"
+								src="./images/1-INTERNATIONAL-AIR-FREIGHT-copy.png"
+								class="attachment-full size-full wp-image-764" alt="">
 						</div>
 					</div>
 					<div class="elementor-element elementor-element-1a9736b5 elementor-widget__width-initial jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box"
@@ -10145,7 +10118,7 @@
 						data-widget_type="image.default">
 						<div class="elementor-widget-container">
 							<img loading="lazy" decoding="async" width="1521" height="1034"
-								src="./images/2-IMPORT-FRIGHT.png" class="attachment-full size-full wp-image-765"
+								src="./images/2 IMPORT FRIGHT NEW.jpg" class="attachment-full size-full wp-image-765"
 								alt="">
 						</div>
 					</div>
@@ -10203,8 +10176,8 @@
 						data-widget_type="image.default">
 						<div class="elementor-widget-container">
 							<img loading="lazy" decoding="async" width="1606" height="979"
-								src="./images/4-AIRPORT-TO-AIRPORT.png" class="attachment-full size-full wp-image-767"
-								alt="">
+								src="./images/4 AIRPORT TO AIRPORT NEW.png"
+								class="attachment-full size-full wp-image-767" alt="">
 						</div>
 					</div>
 					<div class="elementor-element elementor-element-27e910d1 elementor-widget__width-initial jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box"
@@ -10289,7 +10262,8 @@
 						data-widget_type="image.default">
 						<div class="elementor-widget-container">
 							<img loading="lazy" decoding="async" width="1536" height="1024"
-								src="./images/7-AIR-CHARTER-.png" class="attachment-full size-full wp-image-762" alt="">
+								src="./images/7 AIR CHARTER NEW.png" class="attachment-full size-full wp-image-762"
+								alt="">
 						</div>
 					</div>
 					<div class="elementor-element elementor-element-3680c3fe elementor-widget__width-initial jkit-equal-height-disable elementor-widget elementor-widget-jkit_icon_box"
@@ -10347,7 +10321,7 @@
 				<div class="e-con-inner">
 					<div class="elementor-element elementor-element-255305db e-con-full e-flex e-con e-child"
 						data-id="255305db" data-element_type="container" data-e-type="container">
-						<div class="elementor-element elementor-element-41e19ab1 elementor-widget__width-initial elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+						<!-- <div class="elementor-element elementor-element-41e19ab1 elementor-widget__width-initial elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
 							data-id="41e19ab1" data-element_type="widget" data-e-type="widget"
 							data-widget_type="divider.default">
 							<div class="elementor-widget-container">
@@ -10356,7 +10330,7 @@
 									</span>
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<div class="elementor-element elementor-element-5f2f1c1f elementor-widget elementor-widget-heading"
 							data-id="5f2f1c1f" data-element_type="widget" data-e-type="widget"
 							data-widget_type="heading.default">
