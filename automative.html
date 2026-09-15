@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -9125,9 +9125,14 @@
 
 												<!-- Card 1 -->
 												<div class="wp-challenge-card">
-													<div class="wp-card-icon" style="background: transparent;">
-														<img src="./images/automotive_icon_1.png" alt="Automotive Icon"
-															style="width: 100%; height: 100%; border-radius: 8px; object-fit: contain;">
+													<div class="wp-card-icon-wrapper"
+														style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: left; margin-bottom: 20px;">
+														<div class="wp-card-icon"
+															style="width: 50px; height: 50px; border-radius: 8px; overflow: hidden; background-color: #2563eb; margin-bottom: 0;">
+															<img src="./images/automotive_icon_1.png"
+																alt="Automotive Icon"
+																style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.35);">
+														</div>
 													</div>
 													<h3>Production Continuity</h3>
 													<p>Maintaining the uninterrupted movement of raw materials,
@@ -9138,9 +9143,14 @@
 
 												<!-- Card 2 -->
 												<div class="wp-challenge-card">
-													<div class="wp-card-icon" style="background: transparent;">
-														<img src="./images/automotive_icon_2.png" alt="Automotive Icon"
-															style="width: 100%; height: 100%; border-radius: 8px; object-fit: contain;">
+													<div class="wp-card-icon-wrapper"
+														style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: left; margin-bottom: 20px;">
+														<div class="wp-card-icon"
+															style="width: 50px; height: 50px; border-radius: 8px; overflow: hidden; background-color: #2563eb; margin-bottom: 0;">
+															<img src="./images/automotive_icon_2.png"
+																alt="Automotive Icon"
+																style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.35);">
+														</div>
 													</div>
 													<h3>Just-in-Time &amp; Kanban</h3>
 													<p>Supporting lean manufacturing operations requires timely
@@ -9150,9 +9160,14 @@
 
 												<!-- Card 3 -->
 												<div class="wp-challenge-card">
-													<div class="wp-card-icon" style="background: transparent;">
-														<img src="./images/automotive_icon_3.png" alt="Automotive Icon"
-															style="width: 100%; height: 100%; border-radius: 8px; object-fit: contain;">
+													<div class="wp-card-icon-wrapper"
+														style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: left; margin-bottom: 20px;">
+														<div class="wp-card-icon"
+															style="width: 50px; height: 50px; border-radius: 8px; overflow: hidden; background-color: #2563eb; margin-bottom: 0;">
+															<img src="./images/automotive_icon_3.png"
+																alt="Automotive Icon"
+																style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.35);">
+														</div>
 													</div>
 													<h3>Inventory Visibility</h3>
 													<p>Maintaining real-time visibility across suppliers, manufacturing
@@ -9162,9 +9177,14 @@
 
 												<!-- Card 4 -->
 												<div class="wp-challenge-card">
-													<div class="wp-card-icon" style="background: transparent;">
-														<img src="./images/automotive_icon_4.png" alt="Automotive Icon"
-															style="width: 100%; height: 100%; border-radius: 8px; object-fit: contain;">
+													<div class="wp-card-icon-wrapper"
+														style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: left; margin-bottom: 20px;">
+														<div class="wp-card-icon"
+															style="width: 50px; height: 50px; border-radius: 8px; overflow: hidden; background-color: #2563eb; margin-bottom: 0;">
+															<img src="./images/automotive_icon_4.png"
+																alt="Automotive Icon"
+																style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.35);">
+														</div>
 													</div>
 													<h3>Distribution Efficiency</h3>
 													<p>Supporting the efficient movement of vehicles, components, and
@@ -9175,9 +9195,14 @@
 
 												<!-- Card 5 -->
 												<div class="wp-challenge-card">
-													<div class="wp-card-icon" style="background: transparent;">
-														<img src="./images/automotive_icon_5.png" alt="Automotive Icon"
-															style="width: 100%; height: 100%; border-radius: 8px; object-fit: contain;">
+													<div class="wp-card-icon-wrapper"
+														style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: left; margin-bottom: 20px;">
+														<div class="wp-card-icon"
+															style="width: 50px; height: 50px; border-radius: 8px; overflow: hidden; background-color: #2563eb; margin-bottom: 0;">
+															<img src="./images/automotive_icon_5.png"
+																alt="Automotive Icon"
+																style="width: 100%; height: 100%; object-fit: cover; transform: scale(1.35);">
+														</div>
 													</div>
 													<h3>Supply Chain Agility</h3>
 													<p>Responding quickly to changing production schedules, supplier
@@ -9226,7 +9251,7 @@
 											flex: 0 0 calc((100% - 40px) / 3);
 											background-color: #ffffff;
 											border: 1px solid #e2e8f0;
-											border-left: 1px solid #e2e8f0;
+											border-left: 5px solid transparent;
 											border-radius: 12px;
 											padding: 28px;
 											display: flex;
@@ -9239,7 +9264,7 @@
 										.wp-challenge-card:hover {
 											background-color: #f5f8ff;
 											border-color: #d0e1ff;
-											border-left: 5px solid #2563eb;
+											border-left-color: #2563eb;
 											transform: translateY(-3px);
 											box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.08);
 										}
@@ -9322,14 +9347,12 @@
 												const dotsContainer = document.getElementById('wpCarouselDots');
 												if (!track || !dotsContainer) return;
 
-												// Get initial cards
-												let cards = Array.from(track.children);
-												const totalCards = cards.length;
 												let activeDotIndex = 0;
+												const numDots = 3; // Limit to 3 dots
 
-												// Create 5 Dots
+												// Create 3 Dots
 												dotsContainer.innerHTML = '';
-												for (let i = 0; i < totalCards; i++) {
+												for (let i = 0; i < numDots; i++) {
 													const dot = document.createElement('div');
 													dot.classList.add('wp-dot');
 													if (i === 0) dot.classList.add('active');
@@ -9342,8 +9365,8 @@
 												function rotateToCard(targetIndex) {
 													if (targetIndex === activeDotIndex) return;
 
-													// Calculate how many steps forward we need to move
-													let steps = (targetIndex - activeDotIndex + totalCards) % totalCards;
+													// Calculate how many steps forward we need to move based on numDots
+													let steps = (targetIndex - activeDotIndex + numDots) % numDots;
 
 													const cardWidth = track.children[0].offsetWidth + 20;
 
@@ -9380,11 +9403,11 @@
 													if (Math.abs(diffX) > 50) {
 														if (diffX > 0) {
 															// Swipe left -> Next Card
-															const nextIndex = (activeDotIndex + 1) % totalCards;
+															const nextIndex = (activeDotIndex + 1) % numDots;
 															rotateToCard(nextIndex);
 														} else {
 															// Swipe right -> Previous Card
-															const prevIndex = (activeDotIndex - 1 + totalCards) % totalCards;
+															const prevIndex = (activeDotIndex - 1 + numDots) % numDots;
 															rotateToCard(prevIndex);
 														}
 													}
@@ -9826,7 +9849,7 @@
 							</div>
 						</div>
 						<span
-							style="font-size:16px; color:#ffffff; font-family:inherit; line-height:1; display:inline-block;">LinkedIn</span>
+							style="font-size:16px; color:#ffffff; font-family:inherit; line-height:1; display:inline-block; margin-left: 11px;">LinkedIn</span>
 					</div>
 				</div>
 				<div class="elementor-element elementor-element-3e2eb793 e-con-full e-flex e-con e-child"
@@ -9847,7 +9870,7 @@
 									<a href="#">
 
 										<span class="elementor-icon-list-icon"
-											style="align-self: flex-start; margin-top: -2px;">
+											style="align-self: flex-start; margin-top: -6px;">
 											<svg aria-hidden="true" class="e-font-icon-svg e-fas-map-marker-alt"
 												viewbox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
 												<path
@@ -10202,7 +10225,7 @@
 									<li class="elementor-icon-list-item elementor-inline-item">
 										<a href="#">
 
-											<span class="elementor-icon-list-text">Disclaimer</span>
+											<span class="elementor-icon-list-text">Disclaimer Policy</span>
 										</a>
 									</li>
 									<li class="elementor-icon-list-item elementor-inline-item">
