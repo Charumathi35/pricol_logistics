@@ -10760,3 +10760,12 @@ i.fas {
 .elementor-element-31f28075 .elementor-icon-list-item>a {
 	color: white !important;
 }
+
+/* FORCE ALL OVERVIEW SECTION IMAGES TO DISPLAY AT IDENTICAL ASPECT RATIO & SIZE */
+.elementor-widget-image img[src*="OVERVIEW"],
+.elementor-widget-image img[src*="ROAD-OVERVIEW"] {
+	aspect-ratio: 1357 / 617 !important;
+	object-fit: cover !important;
+	width: 100% !important;
+	height: auto !important;
+}
