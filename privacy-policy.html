@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -9880,8 +9880,8 @@
 				<div
 					style="display: flex; flex-direction: column; gap: 30px; font-size: 18px; line-height: 1.8em; color: #333333;">
 					<section>
-						<p>Pricol Logistics Private Limited and its Subsidiaries (“Pricol” or ”we” or “us” or “our” or
-							“Data Fiduciary”) respect the privacy of every visitor (“you” or “Data Principal”) who
+						<p>Pricol Logistics Private Limited and its Subsidiaries (â€œPricolâ€ or â€weâ€ or â€œusâ€ or â€œourâ€ or
+							â€œData Fiduciaryâ€) respect the privacy of every visitor (â€œyouâ€ or â€œData Principalâ€) who
 							visits, registers with or subscribes to our websites and are committed to ensuring
 							safeguarding it. This policy explains what personal data we collect, why we collect and what
 							we do with it.</p>
@@ -9935,7 +9935,7 @@
 							<li>Any other personal information that you send to us.</li>
 						</ul>
 						<p style="margin-top: 15px;">Before you disclose to us the personal information of another
-							person, you must obtain that person’s consent to both the disclosure and the processing of
+							person, you must obtain that personâ€™s consent to both the disclosure and the processing of
 							that personal information in accordance with this policy.</p>
 					</section>
 
@@ -9966,7 +9966,7 @@
 						<h3 style="font-size: 24px; font-weight: 600; color: #0F2A63; margin-bottom: 12px;">To Whom the
 							Personal Data be shared?</h3>
 						<p>We will not, without your express consent, supply your personal information to any third
-							party for their or any other third party’s direct marketing.</p>
+							party for their or any other third partyâ€™s direct marketing.</p>
 						<p style="margin-top: 15px;">We may disclose your personal information to any of our employees,
 							officers, insurers, professional advisers, agents, suppliers, or subcontractors as
 							reasonably necessary for the purposes set out in this policy. We may disclose your personal
@@ -10091,7 +10091,7 @@
 									style="color: #E1261C; font-weight: 600; text-decoration: none;">it.grievanceofficer@pricol.com</a>
 							</p>
 							<p style="margin: 5px 0 0 0;"><strong>Address:</strong> 109, CPM Towers, Racecourse,
-								Coimbatore – 641018</p>
+								Coimbatore â€“ 641018</p>
 						</div>
 						<p style="margin-top: 15px; font-size: 15px; color: #333333;">We aim to respond within a
 							reasonable time and in accordance with applicable law. In accordance with Information
@@ -10150,8 +10150,8 @@
 				<h2 style="color: #fff; font-size: 40px; font-weight: 500; margin-bottom: 15px;">Your next opportunity
 					could start here.</h2>
 				<p style="color: rgba(255, 255, 255, 0.85); font-size: 18px; line-height: 1.7; margin-bottom: 40px;">
-					We’re always interested in hearing from talented and motivated professionals. Share your resume with
-					us and we’ll keep your profile in consideration for relevant opportunities that arise across Pricol
+					Weâ€™re always interested in hearing from talented and motivated professionals. Share your resume with
+					us and weâ€™ll keep your profile in consideration for relevant opportunities that arise across Pricol
 					Logistics.</p> -->
 
 	<!-- Split Button -->
@@ -10983,6 +10983,50 @@
 		//# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
 	</script>
 
+		<!-- Sleek Animated Back to Top Progress Button -->
+	<button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+		<svg class="progress-ring" viewBox="0 0 48 48">
+			<circle class="progress-ring-bg" cx="24" cy="24" r="22"></circle>
+			<circle class="progress-ring-circle" cx="24" cy="24" r="22"></circle>
+		</svg>
+		<span class="arrow-icon">
+			<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+				<line x1="12" y1="19" x2="12" y2="5"></line>
+				<polyline points="5 12 12 5 19 12"></polyline>
+			</svg>
+		</span>
+	</button>
+	<script>
+		(function () {
+			const btn = document.getElementById('back-to-top');
+			if (!btn) return;
+			const circle = btn.querySelector('.progress-ring-circle');
+			if (!circle) return;
+			const radius = circle.r.baseVal.value;
+			const circumference = 2 * Math.PI * radius;
+			circle.style.strokeDasharray = circumference + ' ' + circumference;
+			circle.style.strokeDashoffset = circumference;
+			function updateProgress() {
+				const scrollTop = window.scrollY || document.documentElement.scrollTop;
+				const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+				if (scrollHeight <= 0) return;
+				const scrollPercent = Math.min(Math.max(scrollTop / scrollHeight, 0), 1);
+				const offset = circumference - (scrollPercent * circumference);
+				circle.style.strokeDashoffset = offset;
+				if (scrollTop > 200) {
+					btn.classList.add('is-visible');
+				} else {
+					btn.classList.remove('is-visible');
+				}
+			}
+			window.addEventListener('scroll', updateProgress, { passive: true });
+			window.addEventListener('resize', updateProgress, { passive: true });
+			btn.addEventListener('click', function () {
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			});
+			updateProgress();
+		})();
+	</script>
 </body>
 
 </html>
