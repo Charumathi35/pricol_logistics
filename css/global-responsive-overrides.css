@@ -11070,7 +11070,7 @@ i.fas {
 	display: none !important;
 }
 
-/* Desktop Header Container Layout (> 1024px) - UTILIZE LEFT SPACE NEAR HOME MENU */
+/* Desktop Header Container Layout (> 1024px) - PERFECT VERTICAL ALIGNMENT & LEFT SPACE UTILIZATION */
 @media (min-width: 1025px) {
 
 	.elementor-element-103b840d>.e-con-inner,
@@ -11090,12 +11090,30 @@ i.fas {
 		flex: 0 0 auto !important;
 		display: flex !important;
 		align-items: center !important;
+		margin: 0 !important;
+		padding: 0 !important;
 	}
 
 	.elementor-element-72c352b9 {
 		position: relative !important;
 		top: auto !important;
 		left: auto !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		display: flex !important;
+		align-items: center !important;
+	}
+
+	.elementor-element-72c352b9>.elementor-widget-container {
+		display: flex !important;
+		align-items: center !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	.elementor-element-72c352b9 a {
+		display: flex !important;
+		align-items: center !important;
 	}
 
 	.elementor-element-c8adcb1 {
@@ -11104,32 +11122,58 @@ i.fas {
 		justify-content: flex-start !important;
 		align-items: center !important;
 		margin-left: -80px !important;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
+
+	.jkit-nav-menu,
+	.jkit-menu-wrapper,
+	.jkit-menu-container {
+		display: flex !important;
+		align-items: center !important;
+	}
+
+	.jkit-menu {
+		display: flex !important;
+		flex-direction: row !important;
+		align-items: center !important;
+		margin: 0 !important;
+	}
+
+	.jkit-menu>li {
+		display: flex !important;
+		align-items: center !important;
+	}
+
+	.jkit-menu>li>a {
+		display: inline-flex !important;
+		align-items: center !important;
 	}
 }
 
-/* Header Scrolled State Logo Scaling */
+/* Header Scrolled State Logo Scaling - MAINTAIN SAME SIZE ON SCROLL */
 .header-scrolled .elementor-element-72c352b9 img,
 .header-scrolled .jkit-nav-logo img {
-	max-height: 32px !important;
-	max-width: 135px !important;
+	max-height: 38px !important;
+	max-width: 155px !important;
 }
 
 .header-scrolled .header-right-logo-img {
 	height: 16px !important;
 }
 
-/* Laptop Screens (1025px - 1366px) - RETAIN FULL FONT SIZE & UTILIZE LEFT SPACE */
+/* Laptop Screens (1025px - 1366px) */
 @media (max-width: 1366px) {
 
 	.elementor-element-72c352b9 img,
 	.jkit-nav-site-title .jkit-nav-logo img {
-		max-height: 35px !important;
-		max-width: 145px !important;
+		max-height: 38px !important;
+		max-width: 155px !important;
 	}
 
 	.header-right-logo-img {
-		height: 17px !important;
-		max-width: 260px !important;
+		height: 16px !important;
+		max-width: 250px !important;
 	}
 }
 
