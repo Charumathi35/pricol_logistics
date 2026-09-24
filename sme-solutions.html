@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -10594,7 +10594,18 @@
 		//# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
 	</script>
 
-		<!-- Sleek Animated Back to Top Progress Button -->
+	<!-- Sleek Floating Track Shipment Button & Back to Top Progress Button -->
+	<a id="track-shipment-btn" class="track-shipment-btn" href="#" aria-label="Track Shipment" title="Track Shipment">
+		<span class="track-icon">
+			<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+				<rect x="1" y="3" width="15" height="13"></rect>
+				<polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+				<circle cx="5.5" cy="18.5" r="2.5"></circle>
+				<circle cx="18.5" cy="18.5" r="2.5"></circle>
+			</svg>
+		</span>
+		<span class="track-tooltip">Track Shipment</span>
+	</a>
 	<button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
 		<svg class="progress-ring" viewBox="0 0 48 48">
 			<circle class="progress-ring-bg" cx="24" cy="24" r="22"></circle>
@@ -10610,6 +10621,7 @@
 	<script>
 		(function () {
 			const btn = document.getElementById('back-to-top');
+			const trackBtn = document.getElementById('track-shipment-btn');
 			if (!btn) return;
 			const circle = btn.querySelector('.progress-ring-circle');
 			if (!circle) return;
@@ -10626,8 +10638,10 @@
 				circle.style.strokeDashoffset = offset;
 				if (scrollTop > 200) {
 					btn.classList.add('is-visible');
+					if (trackBtn) trackBtn.classList.add('is-visible');
 				} else {
 					btn.classList.remove('is-visible');
+					if (trackBtn) trackBtn.classList.remove('is-visible');
 				}
 			}
 			window.addEventListener('scroll', updateProgress, { passive: true });

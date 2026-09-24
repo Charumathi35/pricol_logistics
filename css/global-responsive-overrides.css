@@ -10846,6 +10846,89 @@ i.fas {
 	transition: stroke-dashoffset 0.1s linear !important;
 }
 
+/* HIDE TRACK SHIPMENT BUTTON FROM HEADER NAVIGATION MENU */
+.elementor-element-285579d4 .elementor-widget-jkit_button,
+.elementor-element-700560da .elementor-widget-jkit_button,
+.ekit-template-content-header .elementor-widget-jkit_button,
+.vamtam-header-wrapper .elementor-widget-jkit_button,
+.elementor-element-67328794,
+.elementor-element-6c6aa93 {
+	display: none !important;
+}
+
+/* SLEEK FLOATING TRACK SHIPMENT BUTTON ABOVE BACK-TO-TOP BUTTON */
+.track-shipment-btn {
+	position: fixed !important;
+	bottom: 92px !important;
+	right: 30px !important;
+	width: 50px !important;
+	height: 50px !important;
+	border-radius: 50% !important;
+	background: #0072BC !important;
+	color: #FFFFFF !important;
+	border: none !important;
+	outline: none !important;
+	cursor: pointer !important;
+	z-index: 99999 !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	box-shadow: 0 8px 24px rgba(0, 114, 188, 0.35) !important;
+	opacity: 0 !important;
+	visibility: hidden !important;
+	transform: translateY(20px) scale(0.85) !important;
+	transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+	text-decoration: none !important;
+	padding: 0 !important;
+}
+
+.track-shipment-btn.is-visible {
+	opacity: 1 !important;
+	visibility: visible !important;
+	transform: translateY(0) scale(1) !important;
+}
+
+.track-shipment-btn:hover {
+	transform: translateY(-3px) scale(1.08) !important;
+	box-shadow: 0 12px 28px rgba(15, 42, 99, 0.45) !important;
+	background: #0F2A63 !important;
+	color: #FFFFFF !important;
+}
+
+.track-shipment-btn .track-icon {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	transition: transform 0.25s ease !important;
+}
+
+.track-shipment-btn:hover .track-icon {
+	transform: scale(1.1) !important;
+}
+
+.track-shipment-btn .track-tooltip {
+	position: absolute !important;
+	right: 62px !important;
+	top: 50% !important;
+	transform: translateY(-50%) translateX(10px) !important;
+	background: #0F2A63 !important;
+	color: #FFFFFF !important;
+	padding: 6px 14px !important;
+	border-radius: 20px !important;
+	font-size: 12px !important;
+	font-weight: 600 !important;
+	white-space: nowrap !important;
+	opacity: 0 !important;
+	pointer-events: none !important;
+	transition: all 0.25s ease !important;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+}
+
+.track-shipment-btn:hover .track-tooltip {
+	opacity: 1 !important;
+	transform: translateY(-50%) translateX(0) !important;
+}
+
 @media (max-width: 768px) {
 	.back-to-top-btn {
 		bottom: 20px !important;
@@ -10856,6 +10939,15 @@ i.fas {
 	.back-to-top-btn .progress-ring {
 		width: 44px !important;
 		height: 44px !important;
+	}
+	.track-shipment-btn {
+		bottom: 74px !important;
+		right: 20px !important;
+		width: 44px !important;
+		height: 44px !important;
+	}
+	.track-shipment-btn .track-tooltip {
+		display: none !important;
 	}
 }
 
