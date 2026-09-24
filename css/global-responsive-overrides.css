@@ -744,10 +744,10 @@ article.page,
 	}
 
 	/* Page-specific banner containers on inner pages */
-	.e-con.e-parent:first-child .e-con-inner {
+	/* .e-con.e-parent:first-child .e-con-inner {
 		padding-top: 80px !important;
 		padding-bottom: 40px !important;
-	}
+	} */
 
 	/* Icon/card grids: 2 columns on tablet */
 	.e-con.e-flex>.e-con.e-child.elementor-widget__width-initial {
@@ -10936,16 +10936,19 @@ i.fas {
 		width: 44px !important;
 		height: 44px !important;
 	}
+
 	.back-to-top-btn .progress-ring {
 		width: 44px !important;
 		height: 44px !important;
 	}
+
 	.track-shipment-btn {
 		bottom: 74px !important;
 		right: 20px !important;
 		width: 44px !important;
 		height: 44px !important;
 	}
+
 	.track-shipment-btn .track-tooltip {
 		display: none !important;
 	}
@@ -10980,18 +10983,264 @@ i.fas {
 }
 
 /* Ensure menu items stay crisp and legible over the white background when scrolled */
-.elementor-element-285579d4.header-scrolled .jkit-menu > li > a,
-.elementor-element-700560da.header-scrolled .jkit-menu > li > a,
-.ekit-template-content-header.header-scrolled .jkit-menu > li > a,
-.vamtam-header-wrapper.header-scrolled .jkit-menu > li > a {
+.elementor-element-285579d4.header-scrolled .jkit-menu>li>a,
+.elementor-element-700560da.header-scrolled .jkit-menu>li>a,
+.ekit-template-content-header.header-scrolled .jkit-menu>li>a,
+.vamtam-header-wrapper.header-scrolled .jkit-menu>li>a {
 	color: #0F2A63 !important;
 }
 
-.elementor-element-285579d4.header-scrolled .jkit-menu > li > a:hover,
-.elementor-element-700560da.header-scrolled .jkit-menu > li > a:hover,
-.ekit-template-content-header.header-scrolled .jkit-menu > li > a:hover,
-.vamtam-header-wrapper.header-scrolled .jkit-menu > li > a:hover {
+.elementor-element-285579d4.header-scrolled .jkit-menu>li>a:hover,
+.elementor-element-700560da.header-scrolled .jkit-menu>li>a:hover,
+.ekit-template-content-header.header-scrolled .jkit-menu>li>a:hover,
+.vamtam-header-wrapper.header-scrolled .jkit-menu>li>a:hover {
 	color: #0072BC !important;
 }
 
-
+/* HEADER SPLIT LOGO & RIGHT LOGO TEXT STYLES - STRICT RESPONSIVE & ALIGNMENT CONTROL */
+
+/* Enforce No Text Wrapping across all navigation menu items */
+.jkit-menu>li>a {
+	white-space: nowrap !important;
+	word-break: keep-all !important;
+}
+
+.jkit-menu {
+	display: flex !important;
+	flex-direction: row !important;
+	align-items: center !important;
+	flex-wrap: nowrap !important;
+}
+
+/* Left Emblem Logo Container & Image */
+.elementor-element-72c352b9 {
+	width: auto !important;
+	max-width: 170px !important;
+	display: inline-flex !important;
+	align-items: center !important;
+}
+
+.elementor-element-72c352b9>.elementor-widget-container {
+	width: auto !important;
+}
+
+.elementor-element-72c352b9 a {
+	display: inline-block !important;
+}
+
+.elementor-element-72c352b9 img,
+.jkit-nav-site-title .jkit-nav-logo img,
+.jkit-nav-logo img {
+	height: auto !important;
+	max-height: 38px !important;
+	width: auto !important;
+	max-width: 155px !important;
+	object-fit: contain !important;
+	display: block !important;
+}
+
+/* Right Logo Text Item (Desktop Nav) - NO BORDER LINES, STRICT SINGLE LINE ALIGNMENT */
+.header-right-logo-item {
+	display: inline-flex !important;
+	align-items: center !important;
+	margin-left: 14px !important;
+	padding-left: 0 !important;
+	border: none !important;
+	outline: none !important;
+	box-shadow: none !important;
+	flex-shrink: 1 !important;
+}
+
+.header-right-logo-img {
+	height: 16px !important;
+	width: auto !important;
+	max-width: 250px !important;
+	object-fit: contain !important;
+	display: block !important;
+	opacity: 0.95;
+	transition: all 0.3s ease;
+}
+
+.header-right-logo-img:hover {
+	opacity: 1;
+}
+
+/* Mobile Header Right Logo (Hidden on Desktop) */
+.mobile-header-right-logo {
+	display: none !important;
+}
+
+/* Desktop Header Container Layout (> 1024px) - UTILIZE LEFT SPACE NEAR HOME MENU */
+@media (min-width: 1025px) {
+
+	.elementor-element-103b840d>.e-con-inner,
+	.ekit-template-content-header .e-con-inner,
+	.vamtam-header-wrapper .e-con-inner {
+		display: flex !important;
+		flex-direction: row !important;
+		align-items: center !important;
+		justify-content: flex-start !important;
+		width: 100% !important;
+	}
+
+	.elementor-element-2f5833d4 {
+		position: relative !important;
+		top: auto !important;
+		left: auto !important;
+		flex: 0 0 auto !important;
+		display: flex !important;
+		align-items: center !important;
+	}
+
+	.elementor-element-72c352b9 {
+		position: relative !important;
+		top: auto !important;
+		left: auto !important;
+	}
+
+	.elementor-element-c8adcb1 {
+		flex: 1 1 auto !important;
+		display: flex !important;
+		justify-content: flex-start !important;
+		align-items: center !important;
+		margin-left: -80px !important;
+	}
+}
+
+/* Header Scrolled State Logo Scaling */
+.header-scrolled .elementor-element-72c352b9 img,
+.header-scrolled .jkit-nav-logo img {
+	max-height: 32px !important;
+	max-width: 135px !important;
+}
+
+.header-scrolled .header-right-logo-img {
+	height: 16px !important;
+}
+
+/* Laptop Screens (1025px - 1366px) - RETAIN FULL FONT SIZE & UTILIZE LEFT SPACE */
+@media (max-width: 1366px) {
+
+	.elementor-element-72c352b9 img,
+	.jkit-nav-site-title .jkit-nav-logo img {
+		max-height: 35px !important;
+		max-width: 145px !important;
+	}
+
+	.header-right-logo-img {
+		height: 17px !important;
+		max-width: 260px !important;
+	}
+}
+
+/* Tablet & Mobile Screens (<= 1024px) - HAMBURGER LAYOUT (Left Logo, Middle Hamburger, Right Logo) */
+@media (max-width: 1024px) {
+
+	/* Hide logo inside dropdown drawer list to prevent duplication */
+	.header-right-logo-item {
+		display: none !important;
+		border: none !important;
+	}
+
+	/* Align header container for Left-Middle-Right layout */
+	.elementor-element-103b840d>.e-con-inner,
+	.ekit-template-content-header .e-con-inner,
+	.vamtam-header-wrapper .e-con-inner {
+		display: flex !important;
+		flex-direction: row !important;
+		align-items: center !important;
+		justify-content: space-between !important;
+		position: relative !important;
+		width: 100% !important;
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+	}
+
+	/* Left Logo on Mobile/Tablet */
+	.elementor-element-2f5833d4 {
+		position: relative !important;
+		top: auto !important;
+		left: auto !important;
+		transform: none !important;
+		display: flex !important;
+		align-items: center !important;
+		z-index: 5 !important;
+		margin: 0 !important;
+	}
+
+	.elementor-element-72c352b9 {
+		position: relative !important;
+		top: auto !important;
+		left: auto !important;
+		text-align: left !important;
+		margin: 0 !important;
+	}
+
+	.elementor-element-72c352b9 img,
+	.jkit-nav-site-title .jkit-nav-logo img {
+		max-height: 32px !important;
+		max-width: 135px !important;
+	}
+
+	/* Middle Hamburger Button */
+	.elementor-element-c8adcb1 {
+		position: static !important;
+		width: auto !important;
+	}
+
+	.jkit-hamburger-menu {
+		position: absolute !important;
+		left: 50% !important;
+		transform: translateX(-50%) !important;
+		top: 50% !important;
+		margin-top: -18px !important;
+		z-index: 10 !important;
+	}
+
+	/* Right Logo on Mobile/Tablet Header Bar */
+	.mobile-header-right-logo {
+		display: flex !important;
+		align-items: center !important;
+		z-index: 5 !important;
+		margin-left: auto !important;
+		text-decoration: none !important;
+	}
+
+	.mobile-header-right-logo-img {
+		height: 18px !important;
+		width: auto !important;
+		max-width: 220px !important;
+		object-fit: contain !important;
+		display: block !important;
+	}
+}
+
+/* Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
+
+	.elementor-element-72c352b9 img,
+	.jkit-nav-site-title .jkit-nav-logo img {
+		max-height: 28px !important;
+		max-width: 115px !important;
+	}
+
+	.mobile-header-right-logo-img {
+		height: 16px !important;
+		max-width: 170px !important;
+	}
+}
+
+/* Small Mobile Screens (<= 480px) */
+@media (max-width: 480px) {
+
+	.elementor-element-72c352b9 img,
+	.jkit-nav-site-title .jkit-nav-logo img {
+		max-height: 24px !important;
+		max-width: 95px !important;
+	}
+
+	.mobile-header-right-logo-img {
+		height: 14px !important;
+		max-width: 140px !important;
+	}
+}
