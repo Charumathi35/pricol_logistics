@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -10683,6 +10683,25 @@
 				window.scrollTo({ top: 0, behavior: 'smooth' });
 			});
 			updateProgress();
+		})();
+	</script>
+	<!-- Dynamic Sticky Header Scroll Script -->
+	<script>
+		(function () {
+			function handleHeaderScroll() {
+				const headers = document.querySelectorAll('.elementor-element-285579d4, .ekit-template-content-header, .vamtam-header-wrapper');
+				const scrollPos = window.scrollY || document.documentElement.scrollTop;
+				headers.forEach(header => {
+					if (scrollPos > 40) {
+						header.classList.add('header-scrolled');
+					} else {
+						header.classList.remove('header-scrolled');
+					}
+				});
+			}
+			window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+			window.addEventListener('resize', handleHeaderScroll, { passive: true });
+			handleHeaderScroll();
 		})();
 	</script>
 </body>

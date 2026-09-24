@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -10161,7 +10161,7 @@
 									<div
 										class="ekit-heading elementskit-section-title-wraper text_center   ekit_heading_tablet-   ekit_heading_mobile-">
 										<h2 class="ekit-heading--title elementskit-section-title ">End-to-end
-											logistics<span>Build around your business</span></h2>
+											logistics<span>Built for your <br>business</span></h2>
 									</div>
 								</div>
 							</div>
@@ -11675,14 +11675,15 @@
 		//# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
 	</script>
 
-		<!-- Sleek Animated Back to Top Progress Button -->
+	<!-- Sleek Animated Back to Top Progress Button -->
 	<button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
 		<svg class="progress-ring" viewBox="0 0 48 48">
 			<circle class="progress-ring-bg" cx="24" cy="24" r="22"></circle>
 			<circle class="progress-ring-circle" cx="24" cy="24" r="22"></circle>
 		</svg>
 		<span class="arrow-icon">
-			<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+			<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+				stroke-linecap="round" stroke-linejoin="round">
 				<line x1="12" y1="19" x2="12" y2="5"></line>
 				<polyline points="5 12 12 5 19 12"></polyline>
 			</svg>
@@ -11717,6 +11718,25 @@
 				window.scrollTo({ top: 0, behavior: 'smooth' });
 			});
 			updateProgress();
+		})();
+	</script>
+	<!-- Dynamic Sticky Header Scroll Script -->
+	<script>
+		(function () {
+			function handleHeaderScroll() {
+				const headers = document.querySelectorAll('.elementor-element-285579d4, .ekit-template-content-header, .vamtam-header-wrapper');
+				const scrollPos = window.scrollY || document.documentElement.scrollTop;
+				headers.forEach(header => {
+					if (scrollPos > 40) {
+						header.classList.add('header-scrolled');
+					} else {
+						header.classList.remove('header-scrolled');
+					}
+				});
+			}
+			window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+			window.addEventListener('resize', handleHeaderScroll, { passive: true });
+			handleHeaderScroll();
 		})();
 	</script>
 </body>

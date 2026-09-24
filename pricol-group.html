@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -5748,7 +5748,7 @@
 											<p style="text-align: center;">Founded in 1975 and headquartered in
 												Coimbatore, India, Pricol Group is a
 												diversified business enterprise with a legacy spanning over five decades
-												and annual revenues nearing â‚¹5,000 crore. From its origins in automotive
+												and annual revenues nearing 5,000 crore. From its origins in automotive
 												components, the Group has evolved into a multi-sector enterprise with
 												interests across automotive technology and solutions, engineering,
 												logistics, packaging, hospitality, travel and lifestyle experiences.</p>
@@ -5760,16 +5760,10 @@
 												leadership of Mr. Vikram Mohan, Chairman, the Group continues to evolve
 												and expand, guided by a clear commitment to sustainable growth and
 												enduring value creation. As part of this journey, Pricol Logistics
-												brings the Groupâ€™s heritage,expertise and global capabilities to the
+												brings the Group's heritage,expertise and global capabilities to the
 												logistics sector, delivering
 												reliable, innovative and sustainable solutions that respond to evolving
 												customer needs.</p>
-											<!-- 
-											<p style="text-align: center;">As part of this journey, Pricol Logistics
-												brings the Groupâ€™s heritage,
-												expertise and global capabilities to the logistics sector, delivering
-												reliable, innovative and sustainable solutions that respond to evolving
-												customer needs.</p> -->
 										</div>
 									</div>
 								</div>
@@ -14792,14 +14786,15 @@
 		//# sourceURL=/wp-includes/js/wp-emoji-loader.min.js
 	</script>
 
-		<!-- Sleek Animated Back to Top Progress Button -->
+	<!-- Sleek Animated Back to Top Progress Button -->
 	<button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
 		<svg class="progress-ring" viewBox="0 0 48 48">
 			<circle class="progress-ring-bg" cx="24" cy="24" r="22"></circle>
 			<circle class="progress-ring-circle" cx="24" cy="24" r="22"></circle>
 		</svg>
 		<span class="arrow-icon">
-			<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+			<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+				stroke-linecap="round" stroke-linejoin="round">
 				<line x1="12" y1="19" x2="12" y2="5"></line>
 				<polyline points="5 12 12 5 19 12"></polyline>
 			</svg>
@@ -14834,6 +14829,25 @@
 				window.scrollTo({ top: 0, behavior: 'smooth' });
 			});
 			updateProgress();
+		})();
+	</script>
+	<!-- Dynamic Sticky Header Scroll Script -->
+	<script>
+		(function () {
+			function handleHeaderScroll() {
+				const headers = document.querySelectorAll('.elementor-element-285579d4, .elementor-element-700560da, .ekit-template-content-header, .vamtam-header-wrapper');
+				const scrollPos = window.scrollY || document.documentElement.scrollTop;
+				headers.forEach(header => {
+					if (scrollPos > 40) {
+						header.classList.add('header-scrolled');
+					} else {
+						header.classList.remove('header-scrolled');
+					}
+				});
+			}
+			window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+			window.addEventListener('resize', handleHeaderScroll, { passive: true });
+			handleHeaderScroll();
 		})();
 	</script>
 </body>
