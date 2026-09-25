@@ -11013,22 +11013,26 @@ i.fas {
 }
 
 /* Left Emblem Logo Container & Image */
-.elementor-element-72c352b9 {
+.elementor-element-72c352b9,
+.elementor-element-607aafca {
 	width: auto !important;
 	max-width: 170px !important;
 	display: inline-flex !important;
 	align-items: center !important;
 }
 
-.elementor-element-72c352b9>.elementor-widget-container {
+.elementor-element-72c352b9>.elementor-widget-container,
+.elementor-element-607aafca>.elementor-widget-container {
 	width: auto !important;
 }
 
-.elementor-element-72c352b9 a {
+.elementor-element-72c352b9 a,
+.elementor-element-607aafca a {
 	display: inline-block !important;
 }
 
 .elementor-element-72c352b9 img,
+.elementor-element-607aafca img,
 .jkit-nav-site-title .jkit-nav-logo img,
 .jkit-nav-logo img {
 	height: auto !important;
@@ -11074,6 +11078,7 @@ i.fas {
 @media (min-width: 1025px) {
 
 	.elementor-element-103b840d>.e-con-inner,
+	.elementor-element-36cf2448>.e-con-inner,
 	.ekit-template-content-header .e-con-inner,
 	.vamtam-header-wrapper .e-con-inner {
 		display: flex !important;
@@ -11083,7 +11088,8 @@ i.fas {
 		width: 100% !important;
 	}
 
-	.elementor-element-2f5833d4 {
+	.elementor-element-2f5833d4,
+	.elementor-element-1c78d561 {
 		position: relative !important;
 		top: auto !important;
 		left: auto !important;
@@ -11094,7 +11100,8 @@ i.fas {
 		padding: 0 !important;
 	}
 
-	.elementor-element-72c352b9 {
+	.elementor-element-72c352b9,
+	.elementor-element-607aafca {
 		position: relative !important;
 		top: auto !important;
 		left: auto !important;
@@ -11104,19 +11111,22 @@ i.fas {
 		align-items: center !important;
 	}
 
-	.elementor-element-72c352b9>.elementor-widget-container {
+	.elementor-element-72c352b9>.elementor-widget-container,
+	.elementor-element-607aafca>.elementor-widget-container {
 		display: flex !important;
 		align-items: center !important;
 		margin: 0 !important;
 		padding: 0 !important;
 	}
 
-	.elementor-element-72c352b9 a {
+	.elementor-element-72c352b9 a,
+	.elementor-element-607aafca a {
 		display: flex !important;
 		align-items: center !important;
 	}
 
-	.elementor-element-c8adcb1 {
+	.elementor-element-c8adcb1,
+	.elementor-element-1b63de07 {
 		flex: 1 1 auto !important;
 		display: flex !important;
 		justify-content: flex-start !important;
@@ -11153,6 +11163,7 @@ i.fas {
 
 /* Header Scrolled State Logo Scaling - MAINTAIN SAME SIZE ON SCROLL */
 .header-scrolled .elementor-element-72c352b9 img,
+.header-scrolled .elementor-element-607aafca img,
 .header-scrolled .jkit-nav-logo img {
 	max-height: 38px !important;
 	max-width: 155px !important;
@@ -11166,6 +11177,7 @@ i.fas {
 @media (max-width: 1366px) {
 
 	.elementor-element-72c352b9 img,
+	.elementor-element-607aafca img,
 	.jkit-nav-site-title .jkit-nav-logo img {
 		max-height: 38px !important;
 		max-width: 155px !important;
@@ -11188,6 +11200,7 @@ i.fas {
 
 	/* Align header container for Left-Middle-Right layout */
 	.elementor-element-103b840d>.e-con-inner,
+	.elementor-element-36cf2448>.e-con-inner,
 	.ekit-template-content-header .e-con-inner,
 	.vamtam-header-wrapper .e-con-inner {
 		display: flex !important;
@@ -11201,7 +11214,8 @@ i.fas {
 	}
 
 	/* Left Logo on Mobile/Tablet */
-	.elementor-element-2f5833d4 {
+	.elementor-element-2f5833d4,
+	.elementor-element-1c78d561 {
 		position: relative !important;
 		top: auto !important;
 		left: auto !important;
@@ -11212,7 +11226,8 @@ i.fas {
 		margin: 0 !important;
 	}
 
-	.elementor-element-72c352b9 {
+	.elementor-element-72c352b9,
+	.elementor-element-607aafca {
 		position: relative !important;
 		top: auto !important;
 		left: auto !important;
@@ -11221,13 +11236,15 @@ i.fas {
 	}
 
 	.elementor-element-72c352b9 img,
+	.elementor-element-607aafca img,
 	.jkit-nav-site-title .jkit-nav-logo img {
 		max-height: 32px !important;
 		max-width: 135px !important;
 	}
 
 	/* Middle Hamburger Button */
-	.elementor-element-c8adcb1 {
+	.elementor-element-c8adcb1,
+	.elementor-element-1b63de07 {
 		position: static !important;
 		width: auto !important;
 	}
@@ -11263,6 +11280,7 @@ i.fas {
 @media (max-width: 768px) {
 
 	.elementor-element-72c352b9 img,
+	.elementor-element-607aafca img,
 	.jkit-nav-site-title .jkit-nav-logo img {
 		max-height: 28px !important;
 		max-width: 115px !important;
@@ -11278,6 +11296,7 @@ i.fas {
 @media (max-width: 480px) {
 
 	.elementor-element-72c352b9 img,
+	.elementor-element-607aafca img,
 	.jkit-nav-site-title .jkit-nav-logo img {
 		max-height: 24px !important;
 		max-width: 95px !important;
