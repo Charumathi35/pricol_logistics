@@ -44,78 +44,213 @@ object:not(.elementor-background-video-embed object) {
 }
 
 /* ============================================================
-   GLOBAL BANNER HEIGHT NORMALIZER
-   Enforce identical min-height on ALL page banner containers
-   so every page banner looks the same height across the site.
-   Element IDs mapped:
-     5045df6e → Sea Freight (ocean-freight.html)
-     4d66946e → Air Freight (air-freight.html)
-     1c33e6f3 → Automotive  (automative.html)
-     4700a098 → Inland Transportation (inland-transportation.html)
-     21d9713a → Warehousing & 3PL (warehousing-3pl.html)
-     600a7cba → Sustainability (sustainability.html)
-     30bf14f8 → Company Overview (company-overview.html)
+   GLOBAL BANNER FIXED HEIGHT & TYPOGRAPHY NORMALIZER
+   Enforces exact identical banner height on ALL inner pages
+   so heading title length never increases or distorts banner height.
+   Element IDs & Class Mapped:
+     .global-page-banner → Universal inner banner class
+     5045df6e → Sea Freight, Careers, Disclaimer, Enquire, Privacy
+     4d66946e → Air Freight
+     1c33e6f3 → Automotive, Apparel, Chemicals, E-Commerce, Electronics, FMCG, Frozen Foods, Fruits/Veg, Pharma, Print, Retail, SME
+     4700a098 → Inland Transportation
+     21d9713a → Warehousing & 3PL
+     600a7cba → Sustainability
+     30bf14f8 → Company Overview
+     236e26d  → Vision, Mission & Core Values (Pricol Group)
 ============================================================ */
+.global-page-banner,
 .elementor-element-5045df6e,
 .elementor-element-4d66946e,
 .elementor-element-1c33e6f3,
 .elementor-element-4700a098,
 .elementor-element-21d9713a,
 .elementor-element-600a7cba,
-.elementor-element-30bf14f8 {
-	min-height: 520px !important;
+.elementor-element-30bf14f8,
+.elementor-element-236e26d {
+	height: 440px !important;
+	min-height: 440px !important;
+	max-height: 440px !important;
+	padding-top: 110px !important;
+	padding-bottom: 30px !important;
+	--padding-top: 110px !important;
+	--padding-bottom: 30px !important;
 	box-sizing: border-box !important;
+	overflow: hidden !important;
+	display: flex !important;
+	flex-direction: column !important;
+	justify-content: center !important;
 }
 
+/* Inner Container Vertical Centering */
+.global-page-banner>.e-con-inner,
+.elementor-element-5045df6e>.e-con-inner,
+.elementor-element-4d66946e>.e-con-inner,
+.elementor-element-1c33e6f3>.e-con-inner,
+.elementor-element-4700a098>.e-con-inner,
+.elementor-element-21d9713a>.e-con-inner,
+.elementor-element-600a7cba>.e-con-inner,
+.elementor-element-30bf14f8>.e-con-inner,
+.elementor-element-236e26d>.e-con-inner {
+	display: flex !important;
+	flex-direction: column !important;
+	justify-content: center !important;
+	height: 100% !important;
+}
+
+/* Uniform Banner Heading Typography & Line Wrapping */
+.global-page-banner .elementor-heading-title,
+.elementor-element-5045df6e .elementor-heading-title,
+.elementor-element-4d66946e .elementor-heading-title,
+.elementor-element-1c33e6f3 .elementor-heading-title,
+.elementor-element-4700a098 .elementor-heading-title,
+.elementor-element-21d9713a .elementor-heading-title,
+.elementor-element-600a7cba .elementor-heading-title,
+.elementor-element-30bf14f8 .elementor-heading-title,
+.elementor-element-236e26d .elementor-heading-title {
+	font-size: 38px !important;
+	line-height: 1.25 !important;
+	margin-top: 8px !important;
+	margin-bottom: 0 !important;
+	display: -webkit-box !important;
+	-webkit-line-clamp: 2 !important;
+	-webkit-box-orient: vertical !important;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+}
+
+/* Laptop Screens (1025px - 1366px) */
 @media (max-width: 1366px) {
 
+	.global-page-banner,
 	.elementor-element-5045df6e,
 	.elementor-element-4d66946e,
 	.elementor-element-1c33e6f3,
 	.elementor-element-4700a098,
 	.elementor-element-21d9713a,
 	.elementor-element-600a7cba,
-	.elementor-element-30bf14f8 {
-		min-height: 460px !important;
+	.elementor-element-30bf14f8,
+	.elementor-element-236e26d {
+		height: 380px !important;
+		min-height: 380px !important;
+		max-height: 380px !important;
+		padding-top: 95px !important;
+		padding-bottom: 25px !important;
+		--padding-top: 95px !important;
+		--padding-bottom: 25px !important;
+	}
+
+	.global-page-banner .elementor-heading-title,
+	.elementor-element-5045df6e .elementor-heading-title,
+	.elementor-element-4d66946e .elementor-heading-title,
+	.elementor-element-1c33e6f3 .elementor-heading-title,
+	.elementor-element-4700a098 .elementor-heading-title,
+	.elementor-element-21d9713a .elementor-heading-title,
+	.elementor-element-600a7cba .elementor-heading-title,
+	.elementor-element-30bf14f8 .elementor-heading-title,
+	.elementor-element-236e26d .elementor-heading-title {
+		font-size: 34px !important;
 	}
 }
 
+/* Tablet Screens (<= 1024px) */
 @media (max-width: 1024px) {
 
+	.global-page-banner,
 	.elementor-element-5045df6e,
 	.elementor-element-4d66946e,
 	.elementor-element-1c33e6f3,
 	.elementor-element-4700a098,
 	.elementor-element-21d9713a,
 	.elementor-element-600a7cba,
-	.elementor-element-30bf14f8 {
-		min-height: 380px !important;
+	.elementor-element-30bf14f8,
+	.elementor-element-236e26d {
+		height: 320px !important;
+		min-height: 320px !important;
+		max-height: 320px !important;
+		padding-top: 85px !important;
+		padding-bottom: 20px !important;
+		--padding-top: 85px !important;
+		--padding-bottom: 20px !important;
+	}
+
+	.global-page-banner .elementor-heading-title,
+	.elementor-element-5045df6e .elementor-heading-title,
+	.elementor-element-4d66946e .elementor-heading-title,
+	.elementor-element-1c33e6f3 .elementor-heading-title,
+	.elementor-element-4700a098 .elementor-heading-title,
+	.elementor-element-21d9713a .elementor-heading-title,
+	.elementor-element-600a7cba .elementor-heading-title,
+	.elementor-element-30bf14f8 .elementor-heading-title,
+	.elementor-element-236e26d .elementor-heading-title {
+		font-size: 28px !important;
 	}
 }
 
+/* Mobile Screens (<= 768px) */
 @media (max-width: 768px) {
 
+	.global-page-banner,
 	.elementor-element-5045df6e,
 	.elementor-element-4d66946e,
 	.elementor-element-1c33e6f3,
 	.elementor-element-4700a098,
 	.elementor-element-21d9713a,
 	.elementor-element-600a7cba,
-	.elementor-element-30bf14f8 {
-		min-height: 280px !important;
+	.elementor-element-30bf14f8,
+	.elementor-element-236e26d {
+		height: 260px !important;
+		min-height: 260px !important;
+		max-height: 260px !important;
+		padding-top: 75px !important;
+		padding-bottom: 15px !important;
+		--padding-top: 75px !important;
+		--padding-bottom: 15px !important;
+	}
+
+	.global-page-banner .elementor-heading-title,
+	.elementor-element-5045df6e .elementor-heading-title,
+	.elementor-element-4d66946e .elementor-heading-title,
+	.elementor-element-1c33e6f3 .elementor-heading-title,
+	.elementor-element-4700a098 .elementor-heading-title,
+	.elementor-element-21d9713a .elementor-heading-title,
+	.elementor-element-600a7cba .elementor-heading-title,
+	.elementor-element-30bf14f8 .elementor-heading-title,
+	.elementor-element-236e26d .elementor-heading-title {
+		font-size: 22px !important;
 	}
 }
 
+/* Small Mobile Screens (<= 480px) */
 @media (max-width: 480px) {
 
+	.global-page-banner,
 	.elementor-element-5045df6e,
 	.elementor-element-4d66946e,
 	.elementor-element-1c33e6f3,
 	.elementor-element-4700a098,
 	.elementor-element-21d9713a,
 	.elementor-element-600a7cba,
-	.elementor-element-30bf14f8 {
+	.elementor-element-30bf14f8,
+	.elementor-element-236e26d {
+		height: 220px !important;
 		min-height: 220px !important;
+		max-height: 220px !important;
+		padding-top: 65px !important;
+		padding-bottom: 15px !important;
+		--padding-top: 65px !important;
+		--padding-bottom: 15px !important;
+	}
+
+	.global-page-banner .elementor-heading-title,
+	.elementor-element-5045df6e .elementor-heading-title,
+	.elementor-element-4d66946e .elementor-heading-title,
+	.elementor-element-1c33e6f3 .elementor-heading-title,
+	.elementor-element-4700a098 .elementor-heading-title,
+	.elementor-element-21d9713a .elementor-heading-title,
+	.elementor-element-600a7cba .elementor-heading-title,
+	.elementor-element-30bf14f8 .elementor-heading-title,
+	.elementor-element-236e26d .elementor-heading-title {
+		font-size: 19px !important;
 	}
 }
 
@@ -1055,19 +1190,6 @@ i.fas {
 /* These vars control actual Elementor padding and must be overridden */
 @media (max-width: 1024px) {
 
-	/* Banner sections: reduce massive em-based top padding on tablet */
-	.elementor-element-1c33e6f3,
-	.elementor-element-21d9713a,
-	.elementor-element-4700a098,
-	.elementor-element-4d66946e,
-	.elementor-element-5045df6e,
-	.elementor-element-600a7cba {
-		--padding-top: 8em !important;
-		--padding-bottom: 4em !important;
-		padding-top: 8em !important;
-		padding-bottom: 4em !important;
-	}
-
 	/* Home page hero banner */
 	.elementor-element-518d30e1 {
 		--padding-top: 10em !important;
@@ -1078,20 +1200,6 @@ i.fas {
 }
 
 @media (max-width: 768px) {
-
-	/* All banner sections: aggressive reduction on mobile */
-	.elementor-element-1c33e6f3,
-	.elementor-element-21d9713a,
-	.elementor-element-4700a098,
-	.elementor-element-4d66946e,
-	.elementor-element-5045df6e,
-	.elementor-element-600a7cba {
-		--padding-top: 5em !important;
-		--padding-bottom: 3em !important;
-		padding-top: 5em !important;
-		padding-bottom: 3em !important;
-	}
-
 	.elementor-element-518d30e1 {
 		--padding-top: 6em !important;
 		--padding-bottom: 3em !important;
@@ -1155,20 +1263,6 @@ i.fas {
 }
 
 @media (max-width: 425px) {
-
-	/* Extra small: make banner padding even smaller */
-	.elementor-element-1c33e6f3,
-	.elementor-element-21d9713a,
-	.elementor-element-4700a098,
-	.elementor-element-4d66946e,
-	.elementor-element-5045df6e,
-	.elementor-element-600a7cba {
-		--padding-top: 4em !important;
-		--padding-bottom: 2em !important;
-		padding-top: 4em !important;
-		padding-bottom: 2em !important;
-	}
-
 	.elementor-element-518d30e1 {
 		--padding-top: 4em !important;
 		--padding-bottom: 2em !important;
@@ -1189,14 +1283,6 @@ i.fas {
 }
 
 @media (max-width: 375px) {
-
-	/* Very small phones */
-	.elementor-element-1c33e6f3,
-	.elementor-element-21d9713a,
-	.elementor-element-4700a098,
-	.elementor-element-4d66946e,
-	.elementor-element-5045df6e,
-	.elementor-element-600a7cba,
 	.elementor-element-518d30e1 {
 		--padding-top: 3em !important;
 		--padding-bottom: 2em !important;
@@ -1215,13 +1301,7 @@ i.fas {
 @media (max-width: 329px) {
 
 	/* Tiny screens */
-	.elementor-element-518d30e1,
-	.elementor-element-1c33e6f3,
-	.elementor-element-21d9713a,
-	.elementor-element-4700a098,
-	.elementor-element-4d66946e,
-	.elementor-element-5045df6e,
-	.elementor-element-600a7cba {
+	.elementor-element-518d30e1 {
 		--padding-top: 2em !important;
 		--padding-bottom: 1.5em !important;
 		padding-top: 2em !important;
@@ -10963,13 +11043,22 @@ i.fas {
 	top: 0 !important;
 	left: 0 !important;
 	width: 100% !important;
+	height: 70px !important;
+	min-height: 70px !important;
+	max-height: 70px !important;
 	z-index: 99999 !important;
 	background-color: transparent !important;
 	background-image: none !important;
 	transition: background-color 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	--padding-top: 0px !important;
+	--padding-bottom: 0px !important;
+	display: flex !important;
+	align-items: center !important;
 }
 
-/* Scrolled White Sticky Header State */
+/* Scrolled White Sticky Header State - STRICT COMPACT 70PX HEIGHT */
 .elementor-element-285579d4.header-scrolled,
 .elementor-element-700560da.header-scrolled,
 .ekit-template-content-header.header-scrolled,
@@ -10978,8 +11067,17 @@ i.fas {
 	top: 0 !important;
 	left: 0 !important;
 	width: 100% !important;
+	height: 70px !important;
+	min-height: 70px !important;
+	max-height: 70px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	--padding-top: 0px !important;
+	--padding-bottom: 0px !important;
 	background-color: #FFFFFF !important;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+	display: flex !important;
+	align-items: center !important;
 }
 
 /* Ensure menu items stay crisp and legible over the white background when scrolled */
@@ -10999,17 +11097,29 @@ i.fas {
 
 /* HEADER SPLIT LOGO & RIGHT LOGO TEXT STYLES - STRICT RESPONSIVE & ALIGNMENT CONTROL */
 
-/* Enforce No Text Wrapping across all navigation menu items */
+/* Enforce No Text Wrapping & Clean Vertical Alignment across all navigation menu items */
 .jkit-menu>li>a {
 	white-space: nowrap !important;
 	word-break: keep-all !important;
+	line-height: 1 !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	align-self: center !important;
+	padding: 8px 12px !important;
+	margin: 0 !important;
+	top: 0 !important;
 }
 
 .jkit-menu {
 	display: flex !important;
 	flex-direction: row !important;
 	align-items: center !important;
+	align-self: center !important;
 	flex-wrap: nowrap !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	top: 0 !important;
+	height: 100% !important;
 }
 
 /* Left Emblem Logo Container & Image */
@@ -11019,16 +11129,33 @@ i.fas {
 	max-width: 170px !important;
 	display: inline-flex !important;
 	align-items: center !important;
+	align-self: center !important;
+	top: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	height: 100% !important;
 }
 
 .elementor-element-72c352b9>.elementor-widget-container,
 .elementor-element-607aafca>.elementor-widget-container {
 	width: auto !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	top: 0 !important;
+	display: flex !important;
+	align-items: center !important;
+	align-self: center !important;
+	height: 100% !important;
 }
 
 .elementor-element-72c352b9 a,
 .elementor-element-607aafca a {
-	display: inline-block !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	align-self: center !important;
+	top: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
 }
 
 .elementor-element-72c352b9 img,
@@ -11041,18 +11168,26 @@ i.fas {
 	max-width: 155px !important;
 	object-fit: contain !important;
 	display: block !important;
+	margin: 0 !important;
+	top: 0 !important;
+	align-self: center !important;
 }
 
 /* Right Logo Text Item (Desktop Nav) - NO BORDER LINES, STRICT SINGLE LINE ALIGNMENT */
 .header-right-logo-item {
 	display: inline-flex !important;
 	align-items: center !important;
+	align-self: center !important;
 	margin-left: 14px !important;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
 	padding-left: 0 !important;
 	border: none !important;
 	outline: none !important;
 	box-shadow: none !important;
 	flex-shrink: 1 !important;
+	top: 0 !important;
+	height: 100% !important;
 }
 
 .header-right-logo-img {
@@ -11063,6 +11198,9 @@ i.fas {
 	display: block !important;
 	opacity: 0.95;
 	transition: all 0.3s ease;
+	margin: 0 !important;
+	top: 0 !important;
+	align-self: center !important;
 }
 
 .header-right-logo-img:hover {
@@ -11077,6 +11215,17 @@ i.fas {
 /* Desktop Header Container Layout (> 1024px) - PERFECT VERTICAL ALIGNMENT & LEFT SPACE UTILIZATION */
 @media (min-width: 1025px) {
 
+	.elementor-element-103b840d,
+	.elementor-element-36cf2448 {
+		height: 100% !important;
+		top: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		display: flex !important;
+		align-items: center !important;
+		align-self: center !important;
+	}
+
 	.elementor-element-103b840d>.e-con-inner,
 	.elementor-element-36cf2448>.e-con-inner,
 	.ekit-template-content-header .e-con-inner,
@@ -11084,45 +11233,62 @@ i.fas {
 		display: flex !important;
 		flex-direction: row !important;
 		align-items: center !important;
+		align-self: center !important;
 		justify-content: flex-start !important;
 		width: 100% !important;
+		height: 100% !important;
+		top: 0 !important;
+		margin: 0 !important;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
 	}
 
 	.elementor-element-2f5833d4,
 	.elementor-element-1c78d561 {
 		position: relative !important;
-		top: auto !important;
+		top: 0 !important;
 		left: auto !important;
 		flex: 0 0 auto !important;
 		display: flex !important;
 		align-items: center !important;
+		align-self: center !important;
 		margin: 0 !important;
 		padding: 0 !important;
+		height: 100% !important;
 	}
 
 	.elementor-element-72c352b9,
 	.elementor-element-607aafca {
 		position: relative !important;
-		top: auto !important;
+		top: 0 !important;
 		left: auto !important;
 		margin: 0 !important;
 		padding: 0 !important;
 		display: flex !important;
 		align-items: center !important;
+		align-self: center !important;
+		height: 100% !important;
 	}
 
 	.elementor-element-72c352b9>.elementor-widget-container,
 	.elementor-element-607aafca>.elementor-widget-container {
 		display: flex !important;
 		align-items: center !important;
+		align-self: center !important;
 		margin: 0 !important;
 		padding: 0 !important;
+		top: 0 !important;
+		height: 100% !important;
 	}
 
 	.elementor-element-72c352b9 a,
 	.elementor-element-607aafca a {
 		display: flex !important;
 		align-items: center !important;
+		align-self: center !important;
+		top: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
 	}
 
 	.elementor-element-c8adcb1,
@@ -11131,33 +11297,58 @@ i.fas {
 		display: flex !important;
 		justify-content: flex-start !important;
 		align-items: center !important;
+		align-self: center !important;
 		margin-left: -80px !important;
 		margin-top: 0 !important;
 		margin-bottom: 0 !important;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+		top: 0 !important;
+		height: 100% !important;
 	}
 
+	.elementor-element-62149d7b,
+	.elementor-element-7de7c883,
+	.elementor-widget-jkit_nav_menu,
+	.jeg-elementor-kit.jkit-nav-menu,
 	.jkit-nav-menu,
 	.jkit-menu-wrapper,
 	.jkit-menu-container {
 		display: flex !important;
 		align-items: center !important;
+		align-self: center !important;
+		top: 0 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		height: 100% !important;
 	}
 
 	.jkit-menu {
 		display: flex !important;
 		flex-direction: row !important;
 		align-items: center !important;
+		align-self: center !important;
 		margin: 0 !important;
+		padding: 0 !important;
+		top: 0 !important;
+		height: 100% !important;
 	}
 
 	.jkit-menu>li {
 		display: flex !important;
 		align-items: center !important;
+		align-self: center !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		top: 0 !important;
+		height: 100% !important;
 	}
 
 	.jkit-menu>li>a {
 		display: inline-flex !important;
 		align-items: center !important;
+		align-self: center !important;
+		top: 0 !important;
 	}
 }
 
