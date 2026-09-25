@@ -67,9 +67,9 @@ object:not(.elementor-background-video-embed object) {
 .elementor-element-600a7cba,
 .elementor-element-30bf14f8,
 .elementor-element-236e26d {
-	height: 440px !important;
+	height: 490px !important;
 	min-height: 440px !important;
-	max-height: 440px !important;
+	max-height: 490px !important;
 	padding-top: 110px !important;
 	padding-bottom: 30px !important;
 	--padding-top: 110px !important;
