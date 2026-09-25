@@ -11191,12 +11191,12 @@ i.fas {
 }
 
 .header-right-logo-img {
-	height: 16px !important;
+	height: 32px !important;
 	width: auto !important;
-	max-width: 250px !important;
+	max-width: 380px !important;
 	object-fit: contain !important;
 	display: block !important;
-	opacity: 0.95;
+	opacity: 1 !important;
 	transition: all 0.3s ease;
 	margin: 0 !important;
 	top: 0 !important;
@@ -11361,7 +11361,8 @@ i.fas {
 }
 
 .header-scrolled .header-right-logo-img {
-	height: 16px !important;
+	height: 28px !important;
+	max-width: 340px !important;
 }
 
 /* Laptop Screens (1025px - 1366px) */
@@ -11375,8 +11376,8 @@ i.fas {
 	}
 
 	.header-right-logo-img {
-		height: 16px !important;
-		max-width: 250px !important;
+		height: 28px !important;
+		max-width: 320px !important;
 	}
 }
 
@@ -11459,9 +11460,9 @@ i.fas {
 	}
 
 	.mobile-header-right-logo-img {
-		height: 18px !important;
+		height: 28px !important;
 		width: auto !important;
-		max-width: 220px !important;
+		max-width: 300px !important;
 		object-fit: contain !important;
 		display: block !important;
 	}
@@ -11478,8 +11479,8 @@ i.fas {
 	}
 
 	.mobile-header-right-logo-img {
-		height: 16px !important;
-		max-width: 170px !important;
+		height: 24px !important;
+		max-width: 250px !important;
 	}
 }
 
@@ -11494,7 +11495,7 @@ i.fas {
 	}
 
 	.mobile-header-right-logo-img {
-		height: 14px !important;
-		max-width: 140px !important;
+		height: 20px !important;
+		max-width: 210px !important;
 	}
 }
