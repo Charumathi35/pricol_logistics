@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -10001,6 +10001,24 @@
 								placeholder="Tell us about yourself or your area of interest..."
 								style="width: 100%; padding: 12px 16px; border: 1.5px solid #dde3f0; border-radius: 8px; font-size: 14px; color: #333; outline: none; resize: vertical; box-sizing: border-box;"></textarea>
 						</div>
+						<!-- Security CAPTCHA Verification Field -->
+						<div>
+							<label style="display: block; font-size: 18px; font-weight: 600; color: #333; margin-bottom: 8px;">
+								Security Verification <span style="color:#3970FF">*</span>
+							</label>
+							<div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px;">
+								<div id="careers-captcha-canvas" class="captcha-canvas" style="background: #e2e8f0; border: 1px solid #dde3f0; border-radius: 8px; padding: 8px 18px; font-family: 'Courier New', Courier, monospace; font-size: 22px; font-weight: 700; letter-spacing: 5px; color: #0F2A63; user-select: none; background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.03) 0px, rgba(0,0,0,0.03) 2px, transparent 2px, transparent 4px);">
+									<!-- Generated Code -->
+								</div>
+								<button type="button" onclick="refreshCaptcha('careers')" style="background: #f8f9fc; border: 1.5px solid #dde3f0; border-radius: 8px; padding: 10px 14px; cursor: pointer; color: #0F2A63; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+									<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+										<path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+									</svg> Refresh
+								</button>
+							</div>
+							<input type="text" id="careers-captcha-input" class="captcha-input" name="captcha_input" required placeholder="Enter CAPTCHA Code">
+							<div id="careers-captcha-error" style="color: #E1261C; font-size: 13px; font-weight: 600; margin-top: 6px; display: none;">Invalid CAPTCHA code. Please try again.</div>
+						</div>
 						<div style="margin-top: 8px;">
 							<button type="submit"
 								style="background: #3970FF; color: #fff; padding: 14px 32px; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; letter-spacing: 0.3px; transition: background 0.2s; box-shadow: 0 4px 12px rgba(57,112,255,0.3);">
@@ -11076,6 +11094,7 @@
 		</div>
 	</div>
 	<script src="./js/cookie-consent.js"></script>
+	<script src="./js/captcha-verification.js"></script>
 </body>
 
 </html>
