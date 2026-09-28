@@ -10648,11 +10648,15 @@
 	<!-- Sleek Floating Track Shipment Button & Back to Top Progress Button -->
 	<a id="track-shipment-btn" class="track-shipment-btn" href="#" aria-label="Track Shipment" title="Track Shipment">
 		<span class="track-icon">
-			<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-				<rect x="1" y="3" width="15" height="13"></rect>
-				<polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-				<circle cx="5.5" cy="18.5" r="2.5"></circle>
-				<circle cx="18.5" cy="18.5" r="2.5"></circle>
+			<svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<!-- Navy Box Base -->
+				<path d="M50 42L78 54V80L50 92L22 80V54L50 42Z" fill="#0B2341"/>
+				<!-- White Route Notch -->
+				<path d="M48 44L34 51V64H40V54L50 49Z" fill="#FFFFFF"/>
+				<!-- Bright Blue Location Pin -->
+				<path d="M50 8C38.95 8 30 16.95 30 28C30 40 46 51 49.5 53.5C49.8 53.7 50.2 53.7 50.5 53.5C54 51 70 40 70 28C70 16.95 61.05 8 50 8Z" fill="#1A82FF"/>
+				<!-- Center White Dot -->
+				<circle cx="50" cy="25" r="7" fill="#FFFFFF"/>
 			</svg>
 		</span>
 		<span class="track-tooltip">Track Shipment</span>
@@ -10722,6 +10726,111 @@
 			handleHeaderScroll();
 		})();
 	</script>
+					<!-- Cookie Consent Banner & Preferences Modal -->
+	<div id="pricol-cookie-banner" class="cookie-banner-wrapper" style="display: none;">
+		<div class="cookie-banner-content">
+			<div class="cookie-banner-text">
+				<h4>Cookies Acceptance</h4>
+				<p>We use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits. By clicking "Accept All", you consent to the use of ALL the cookies. However, you may visit "Customize" to provide a controlled consent. Read our <a href="privacy-policy.html">Privacy Policy</a> to learn more.</p>
+			</div>
+			<div class="cookie-banner-buttons">
+				<button type="button" id="pricol-cookie-customize-btn" class="cookie-btn cookie-btn-customize" onclick="pricolOpenCookieModal()">Customize</button>
+				<button type="button" id="pricol-cookie-reject-btn" class="cookie-btn cookie-btn-reject" onclick="pricolRejectAllCookies()">Reject All</button>
+				<button type="button" id="pricol-cookie-accept-btn" class="cookie-btn cookie-btn-accept" onclick="pricolAcceptAllCookies()">Accept All</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="pricol-cookie-modal" class="cookie-modal-overlay" style="display: none;" onclick="if(event.target===this)pricolCloseCookieModal()">
+		<div class="cookie-modal-box">
+			<div class="cookie-modal-header">
+				<h3>Customize Consent Preferences</h3>
+				<button type="button" id="pricol-cookie-modal-close" class="cookie-modal-close" aria-label="Close modal" onclick="pricolCloseCookieModal()">&times;</button>
+			</div>
+			<div class="cookie-modal-body">
+				<div class="cookie-modal-intro">
+					<p>We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below.</p>
+					<p>The cookies that are categorized as "Necessary" are stored on your browser as they are essential for enabling the basic functionalities of the site. <span id="cookie-more-text" style="display: none;">Necessary cookies are required to enable basic features of this site, such as providing secure log-in or adjusting your consent preferences. Functional cookies help perform certain functionalities. Analytical cookies are used to understand how visitors interact with the site.</span> <a href="javascript:void(0)" id="cookie-show-more-btn" class="cookie-show-more" onclick="toggleCookieShowMore()">Show more</a></p>
+				</div>
+				
+				<div class="cookie-accordion">
+					<!-- Necessary -->
+					<div class="cookie-category-item open">
+						<div class="cookie-category-header" onclick="toggleCookieCategory(this)">
+							<div class="cookie-category-title">
+								<span class="accordion-arrow">&#10095;</span>
+								<span>Necessary</span>
+							</div>
+							<div class="cookie-toggle-wrap">
+								<span class="cookie-status-text active">Always Active</span>
+							</div>
+						</div>
+						<div class="cookie-category-desc">
+							Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data.
+						</div>
+					</div>
+
+					<!-- Functional -->
+					<div class="cookie-category-item open">
+						<div class="cookie-category-header" onclick="toggleCookieCategory(this)">
+							<div class="cookie-category-title">
+								<span class="accordion-arrow">&#10095;</span>
+								<span>Functional</span>
+							</div>
+						</div>
+						<div class="cookie-category-desc">
+							Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.
+						</div>
+					</div>
+
+					<!-- Analytics -->
+					<div class="cookie-category-item open">
+						<div class="cookie-category-header" onclick="toggleCookieCategory(this)">
+							<div class="cookie-category-title">
+								<span class="accordion-arrow">&#10095;</span>
+								<span>Analytics</span>
+							</div>
+						</div>
+						<div class="cookie-category-desc">
+							Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.
+						</div>
+					</div>
+
+					<!-- Performance -->
+					<div class="cookie-category-item open">
+						<div class="cookie-category-header" onclick="toggleCookieCategory(this)">
+							<div class="cookie-category-title">
+								<span class="accordion-arrow">&#10095;</span>
+								<span>Performance</span>
+							</div>
+						</div>
+						<div class="cookie-category-desc">
+							Performance cookies are used to understand and analyze the key performance indexes of the website which helps in delivering a better user experience for the visitors.
+						</div>
+					</div>
+
+					<!-- Advertisement -->
+					<div class="cookie-category-item">
+						<div class="cookie-category-header" onclick="toggleCookieCategory(this)">
+							<div class="cookie-category-title">
+								<span class="accordion-arrow">&#10095;</span>
+								<span>Advertisement</span>
+							</div>
+						</div>
+						<div class="cookie-category-desc" style="display: none;">
+							Advertisement cookies are used to provide visitors with customized advertisements based on the pages you visited previously and to analyze the effectiveness of the ad campaigns.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="cookie-modal-footer">
+				<button type="button" id="pricol-cookie-modal-reject" class="cookie-btn cookie-btn-reject" onclick="pricolRejectAllCookies()">Reject All</button>
+				<button type="button" id="pricol-cookie-modal-save" class="cookie-btn cookie-btn-save" onclick="pricolSaveCookiePreferences()">Save My Preferences</button>
+				<button type="button" id="pricol-cookie-modal-accept" class="cookie-btn cookie-btn-accept" onclick="pricolAcceptAllCookies()">Accept All</button>
+			</div>
+		</div>
+	</div>
+	<script src="./js/cookie-consent.js"></script>
 </body>
 
 </html>

@@ -10941,19 +10941,19 @@ i.fas {
 	position: fixed !important;
 	bottom: 92px !important;
 	right: 30px !important;
-	width: 50px !important;
-	height: 50px !important;
+	width: 52px !important;
+	height: 52px !important;
 	border-radius: 50% !important;
-	background: #0072BC !important;
-	color: #FFFFFF !important;
-	border: none !important;
+	background: #FFFFFF !important;
+	color: #0F2A63 !important;
+	border: 1px solid #E2E8F0 !important;
 	outline: none !important;
 	cursor: pointer !important;
 	z-index: 99999 !important;
 	display: flex !important;
 	align-items: center !important;
 	justify-content: center !important;
-	box-shadow: 0 8px 24px rgba(0, 114, 188, 0.35) !important;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18) !important;
 	opacity: 0 !important;
 	visibility: hidden !important;
 	transform: translateY(20px) scale(0.85) !important;
@@ -10970,9 +10970,8 @@ i.fas {
 
 .track-shipment-btn:hover {
 	transform: translateY(-3px) scale(1.08) !important;
-	box-shadow: 0 12px 28px rgba(15, 42, 99, 0.45) !important;
-	background: #0F2A63 !important;
-	color: #FFFFFF !important;
+	box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25) !important;
+	background: #FFFFFF !important;
 }
 
 .track-shipment-btn .track-icon {
@@ -11523,3 +11522,335 @@ i.fas {
 		max-width: 210px !important;
 	}
 }
+
+/* ==========================================
+   COOKIE CONSENT BANNER & PREFERENCES MODAL
+   Exact pricol.com Dark Minimal Design
+   ========================================== */
+.cookie-banner-wrapper {
+	position: fixed !important;
+	bottom: 0 !important;
+	left: 0 !important;
+	width: 100% !important;
+	z-index: 999999 !important;
+	background: #181818 !important;
+	color: #FFFFFF !important;
+	box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5) !important;
+	border-top: 1px solid #2A2A2A !important;
+	padding: 20px 24px !important;
+	box-sizing: border-box !important;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+	display: none;
+}
+
+.cookie-banner-content {
+	max-width: 1240px !important;
+	margin: 0 auto !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	gap: 24px !important;
+	flex-wrap: wrap !important;
+}
+
+.cookie-banner-text {
+	flex: 1 !important;
+	min-width: 280px !important;
+	color: #CCCCCC !important;
+	font-size: 13.5px !important;
+	line-height: 1.6 !important;
+}
+
+.cookie-banner-text h4 {
+	color: #FFFFFF !important;
+	font-size: 16px !important;
+	font-weight: 700 !important;
+	margin: 0 0 6px 0 !important;
+}
+
+.cookie-banner-text p {
+	margin: 0 !important;
+	color: #CCCCCC !important;
+	font-size: 13.5px !important;
+	line-height: 1.6 !important;
+}
+
+.cookie-banner-text a {
+	color: #3B82F6 !important;
+	text-decoration: underline !important;
+	font-weight: 500 !important;
+	transition: color 0.2s ease !important;
+}
+
+.cookie-banner-text a:hover {
+	color: #60A5FA !important;
+}
+
+.cookie-banner-buttons {
+	display: flex !important;
+	align-items: center !important;
+	gap: 12px !important;
+	flex-wrap: wrap !important;
+	flex-shrink: 0 !important;
+}
+
+.cookie-btn {
+	padding: 10px 22px !important;
+	font-size: 13.5px !important;
+	font-weight: 600 !important;
+	border-radius: 4px !important;
+	cursor: pointer !important;
+	transition: all 0.2s ease !important;
+	font-family: inherit !important;
+	line-height: 1.3 !important;
+	text-align: center !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	outline: none !important;
+	box-sizing: border-box !important;
+	pointer-events: auto !important;
+	position: relative !important;
+	z-index: 1000005 !important;
+}
+
+.cookie-btn-customize,
+.cookie-btn-reject {
+	background: transparent !important;
+	color: #FFFFFF !important;
+	border: 1px solid #FFFFFF !important;
+}
+
+.cookie-btn-customize:hover,
+.cookie-btn-reject:hover {
+	background: rgba(255, 255, 255, 0.12) !important;
+	border-color: #FFFFFF !important;
+}
+
+.cookie-btn-accept {
+	background: #3B82F6 !important;
+	color: #FFFFFF !important;
+	border: 1px solid #3B82F6 !important;
+	font-weight: 600 !important;
+}
+
+.cookie-btn-accept:hover {
+	background: #2563EB !important;
+	border-color: #2563EB !important;
+}
+
+.cookie-btn-save {
+	background: transparent !important;
+	color: #FFFFFF !important;
+	border: 1px solid #FFFFFF !important;
+	font-weight: 600 !important;
+}
+
+.cookie-btn-save:hover {
+	background: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Dark Modal Overlay & Box */
+.cookie-modal-overlay {
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	background: rgba(0, 0, 0, 0.75) !important;
+	backdrop-filter: blur(3px) !important;
+	z-index: 1000000 !important;
+	display: none;
+	align-items: center !important;
+	justify-content: center !important;
+	padding: 16px !important;
+	box-sizing: border-box !important;
+	pointer-events: auto !important;
+}
+
+.cookie-modal-box {
+	background: #181818 !important;
+	color: #FFFFFF !important;
+	border-radius: 6px !important;
+	max-width: 660px !important;
+	width: 100% !important;
+	max-height: 90vh !important;
+	display: flex !important;
+	flex-direction: column !important;
+	overflow: hidden !important;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8) !important;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+	border: 1px solid #2A2A2A !important;
+	pointer-events: auto !important;
+	position: relative !important;
+	z-index: 1000001 !important;
+}
+
+.cookie-modal-header {
+	padding: 20px 24px 16px 24px !important;
+	background: #181818 !important;
+	color: #FFFFFF !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	border: none !important;
+}
+
+.cookie-modal-header h3 {
+	margin: 0 !important;
+	font-size: 18px !important;
+	font-weight: 700 !important;
+	color: #FFFFFF !important;
+}
+
+/* Minimal Close Cross Button */
+.cookie-modal-close {
+	background: transparent !important;
+	border: none !important;
+	color: #888888 !important;
+	font-size: 20px !important;
+	cursor: pointer !important;
+	line-height: 1 !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	width: 24px !important;
+	height: 24px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	box-shadow: none !important;
+	border-radius: 0 !important;
+	transition: color 0.2s ease !important;
+	pointer-events: auto !important;
+	position: relative !important;
+	z-index: 1000005 !important;
+}
+
+.cookie-modal-close:hover {
+	color: #FFFFFF !important;
+	background: transparent !important;
+}
+
+.cookie-modal-body {
+	padding: 0 24px 20px 24px !important;
+	overflow-y: auto !important;
+	flex: 1 !important;
+	font-size: 13.5px !important;
+	color: #CCCCCC !important;
+	line-height: 1.6 !important;
+}
+
+.cookie-modal-intro {
+	margin: 0 0 20px 0 !important;
+	font-size: 13px !important;
+	color: #B0B0B0 !important;
+	line-height: 1.6 !important;
+}
+
+.cookie-modal-intro p {
+	margin: 0 0 8px 0 !important;
+}
+
+.cookie-show-more {
+	color: #3B82F6 !important;
+	text-decoration: underline !important;
+	cursor: pointer !important;
+	font-weight: 500 !important;
+}
+
+.cookie-accordion {
+	display: flex !important;
+	flex-direction: column !important;
+}
+
+.cookie-category-item {
+	border-top: 1px solid #2A2A2A !important;
+	padding: 16px 0 !important;
+	background: transparent !important;
+}
+
+.cookie-category-header {
+	display: flex !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	cursor: pointer !important;
+	user-select: none !important;
+}
+
+.cookie-category-title {
+	font-weight: 700 !important;
+	color: #FFFFFF !important;
+	font-size: 15px !important;
+	display: flex !important;
+	align-items: center !important;
+	gap: 10px !important;
+}
+
+.accordion-arrow {
+	font-size: 11px !important;
+	color: #888888 !important;
+	transition: transform 0.2s ease !important;
+	display: inline-block !important;
+}
+
+.cookie-category-item.open .accordion-arrow {
+	transform: rotate(90deg) !important;
+}
+
+.cookie-status-text.active {
+	font-size: 13.5px !important;
+	font-weight: 600 !important;
+	color: #22C55E !important;
+}
+
+.cookie-category-desc {
+	margin-top: 10px !important;
+	font-size: 13px !important;
+	color: #999999 !important;
+	line-height: 1.6 !important;
+	padding-left: 20px !important;
+}
+
+.cookie-modal-footer {
+	padding: 16px 24px !important;
+	background: #181818 !important;
+	border-top: 1px solid #2A2A2A !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: space-between !important;
+	gap: 12px !important;
+}
+
+.cookie-modal-footer .cookie-btn {
+	flex: 1 !important;
+	text-align: center !important;
+	padding: 10px 14px !important;
+	box-sizing: border-box !important;
+}
+
+.cookie-modal-footer .cookie-btn-reject,
+.cookie-modal-footer .cookie-btn-save {
+	background: transparent !important;
+	color: #FFFFFF !important;
+	border: 1px solid #FFFFFF !important;
+}
+
+.cookie-modal-footer .cookie-btn-accept {
+	background: #3B82F6 !important;
+	color: #FFFFFF !important;
+	border: 1px solid #3B82F6 !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+	.cookie-modal-footer {
+		flex-direction: column !important;
+		gap: 10px !important;
+	}
+
+	.cookie-modal-footer .cookie-btn {
+		width: 100% !important;
+	}
+}
+
+
