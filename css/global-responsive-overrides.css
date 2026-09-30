@@ -11314,6 +11314,43 @@ i.fas {
 		height: 100% !important;
 	}
 
+	/* Right emblem logo container - written identical to Left emblem logo container */
+	.header-right-logo-container,
+	.elementor-element-67328794 {
+		position: relative !important;
+		top: 0 !important;
+		left: auto !important;
+		flex: 0 0 auto !important;
+		width: auto !important;
+		max-width: fit-content !important;
+		display: flex !important;
+		align-items: center !important;
+		align-self: center !important;
+		margin-left: auto !important;
+		margin-right: 50px !important;
+		padding: 0 !important;
+		height: 100% !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+	}
+
+	.header-right-logo-container .elementor-widget-container,
+	.header-right-logo-container .elementor-widget,
+	.header-right-logo-container a,
+	.elementor-element-67328794 .elementor-widget-container,
+	.elementor-element-67328794 .elementor-widget,
+	.elementor-element-67328794 a {
+		display: flex !important;
+		align-items: center !important;
+		align-self: center !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		height: 100% !important;
+		width: auto !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+	}
+
 	.elementor-element-62149d7b,
 	.elementor-element-7de7c883,
 	.elementor-widget-jkit_nav_menu,
