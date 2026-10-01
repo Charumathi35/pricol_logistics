@@ -1,4 +1,4 @@
-﻿/* Global Responsive Overrides 
+/* Global Responsive Overrides 
 
    Media Query Structure Guidelines:
    - 1920px desktop -> spacious layout: @media (min-width: 1367px) and (max-width: 1920px)
@@ -48,15 +48,15 @@ object:not(.elementor-background-video-embed object) {
    Enforces exact identical banner height on ALL inner pages
    so heading title length never increases or distorts banner height.
    Element IDs & Class Mapped:
-     .global-page-banner → Universal inner banner class
-     5045df6e → Sea Freight, Careers, Disclaimer, Enquire, Privacy
-     4d66946e → Air Freight
-     1c33e6f3 → Automotive, Apparel, Chemicals, E-Commerce, Electronics, FMCG, Frozen Foods, Fruits/Veg, Pharma, Print, Retail, SME
-     4700a098 → Inland Transportation
-     21d9713a → Warehousing & 3PL
-     600a7cba → Sustainability
-     30bf14f8 → Company Overview
-     236e26d  → Vision, Mission & Core Values (Pricol Group)
+     .global-page-banner ? Universal inner banner class
+     5045df6e ? Sea Freight, Careers, Disclaimer, Enquire, Privacy
+     4d66946e ? Air Freight
+     1c33e6f3 ? Automotive, Apparel, Chemicals, E-Commerce, Electronics, FMCG, Frozen Foods, Fruits/Veg, Pharma, Print, Retail, SME
+     4700a098 ? Inland Transportation
+     21d9713a ? Warehousing & 3PL
+     600a7cba ? Sustainability
+     30bf14f8 ? Company Overview
+     236e26d  ? Vision, Mission & Core Values (Pricol Group)
 ============================================================ */
 .global-page-banner,
 .elementor-element-5045df6e,
@@ -556,12 +556,6 @@ object:not(.elementor-background-video-embed object) {
 		justify-content: center !important;
 	}
 
-	/* Flatten Col 1 (Logo/LinkedIn) and Col 2 (Contact Us) */
-	.elementor-element-4f2c9e7e,
-	.elementor-element-3e2eb793 {
-		display: contents !important;
-	}
-
 	/* 1. Logo Container */
 	.elementor-element-1f15e6ed {
 		grid-column: 1 / 2;
@@ -590,13 +584,7 @@ object:not(.elementor-background-video-embed object) {
 		justify-content: center !important;
 		margin-right: 10px !important;
 		padding-inline-end: 0px !important;
-	}
-
-	/* 4. LinkedIn Icon and Text */
-	.elementor-element-4f2c9e7e>div:last-child {
-		grid-column: 1 / 2;
-		grid-row: 4 / 5;
-		margin-top: 0 !important;
+	}margin-top: 0 !important;
 	}
 
 	/* Remaining columns: Company, Services, Accreditations */
@@ -1233,19 +1221,6 @@ i.fas {
 	/* Hide the rotated vertical tab on mobile - it breaks layout */
 	.elementor-element-24db1df1 {
 		display: none !important;
-	}
-
-	/* ---- FOOTER: LinkedIn label fix ---- */
-	/* The inline flex wrapper containing LinkedIn button + text */
-	.elementor-element-4f2c9e7e>div:last-child {
-		flex-wrap: nowrap !important;
-		align-items: center !important;
-		gap: 8px !important;
-	}
-
-	.elementor-element-4f2c9e7e>div:last-child>span {
-		white-space: nowrap !important;
-		font-size: 13px !important;
 	}
 
 	/* ---- ALL PAGES: Fix absolute positioned sidebar elements ---- */
