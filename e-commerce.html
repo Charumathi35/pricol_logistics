@@ -9004,7 +9004,7 @@
 			<div class="e-con-inner">
 				<div class="elementor-element elementor-element-3549a8a0 e-con-full e-flex e-con e-child"
 					data-id="3549a8a0" data-element_type="container" data-e-type="container">
-					<div class="elementor-element elementor-element-6de5f657 elementor-icon-list--layout-inline elementor-align-start animated-fast elementor-list-item-link-full_width elementor-invisible elementor-widget elementor-widget-icon-list"
+					<div class="elementor-element elementor-element-6de5f657 elementor-icon-list--layout-inline elementor-align-start animated-fast elementor-list-item-link-full_width  elementor-widget elementor-widget-icon-list"
 						data-id="6de5f657" data-element_type="widget" data-e-type="widget"
 						data-settings='{"_animation":"slideInUp","_animation_delay":100}'
 						data-widget_type="icon-list.default">
@@ -9030,7 +9030,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="elementor-element elementor-element-4207be52 elementor-widget__width-initial animated-fast elementor-invisible elementor-widget elementor-widget-heading"
+					<div class="elementor-element elementor-element-4207be52 elementor-widget__width-initial animated-fast  elementor-widget elementor-widget-heading"
 						data-id="4207be52" data-element_type="widget" data-e-type="widget"
 						data-settings='{"_animation":"slideInUp","_animation_delay":150}'
 						data-widget_type="heading.default">
@@ -9425,8 +9425,26 @@
 														}
 													}
 												});
-											}
+											
+												// Auto-play functionality
+												let autoPlayInterval = setInterval(() => {
+													const nextIndex = (activeDotIndex + 1) % numDots;
+													rotateToCard(nextIndex);
+												}, 3500);
 
+												const carouselContainer = document.getElementById('wpCarouselContainer');
+												if (carouselContainer) {
+													carouselContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+													carouselContainer.addEventListener('mouseleave', () => {
+														clearInterval(autoPlayInterval);
+														autoPlayInterval = setInterval(() => {
+															const nextIndex = (activeDotIndex + 1) % numDots;
+															rotateToCard(nextIndex);
+														}, 3500);
+													});
+												}
+											}
+											
 											if (document.readyState === 'loading') {
 												document.addEventListener('DOMContentLoaded', initInfiniteRotator);
 											} else {
@@ -9641,7 +9659,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="elementor-element elementor-element-57e179a3 e-con-full e-flex elementor-invisible e-con e-child"
+				<div class="elementor-element elementor-element-57e179a3 e-con-full e-flex  e-con e-child"
 					data-id="57e179a3" data-element_type="container" data-e-type="container"
 					data-settings='{"animation":"fadeIn","animation_delay":100}'>
 					<div class="elementor-element elementor-element-2e811f93 elementor-widget__width-initial elementor-widget elementor-widget-heading"
@@ -9671,7 +9689,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="elementor-element elementor-element-287d5031 e-con-full e-flex elementor-invisible e-con e-child"
+				<div class="elementor-element elementor-element-287d5031 e-con-full e-flex  e-con e-child"
 					data-id="287d5031" data-element_type="container" data-e-type="container"
 					data-settings='{"animation":"fadeIn","animation_delay":150}'>
 					<div class="elementor-element elementor-element-306e98fa elementor-widget__width-initial elementor-widget elementor-widget-heading"
@@ -9701,7 +9719,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="elementor-element elementor-element-1d80a50 e-con-full e-flex elementor-invisible e-con e-child"
+				<div class="elementor-element elementor-element-1d80a50 e-con-full e-flex  e-con e-child"
 					data-id="1d80a50" data-element_type="container" data-e-type="container"
 					data-settings='{"animation":"fadeIn","animation_delay":200}'>
 					<div class="elementor-element elementor-element-24604638 elementor-widget__width-initial elementor-widget elementor-widget-heading"
@@ -9730,7 +9748,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="elementor-element elementor-element-2fba53cc e-con-full e-flex elementor-invisible e-con e-child"
+				<div class="elementor-element elementor-element-2fba53cc e-con-full e-flex  e-con e-child"
 					data-id="2fba53cc" data-element_type="container" data-e-type="container"
 					data-settings='{"animation":"fadeIn","animation_delay":250}'>
 					<div class="elementor-element elementor-element-1db26e24 elementor-widget__width-initial elementor-widget elementor-widget-heading"
@@ -9759,7 +9777,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="elementor-element elementor-element-1b544f3 e-con-full e-flex elementor-invisible e-con e-child"
+				<div class="elementor-element elementor-element-1b544f3 e-con-full e-flex  e-con e-child"
 					data-id="1b544f3" data-element_type="container" data-e-type="container"
 					data-settings='{"animation":"fadeIn","animation_delay":250}'>
 					<div class="elementor-element elementor-element-6bf922f elementor-widget__width-initial elementor-widget elementor-widget-heading"
@@ -9788,7 +9806,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="elementor-element elementor-element-2240566 e-con-full e-flex elementor-invisible e-con e-child"
+				<div class="elementor-element elementor-element-2240566 e-con-full e-flex  e-con e-child"
 					data-id="2240566" data-element_type="container" data-e-type="container"
 					data-settings='{"animation":"fadeIn","animation_delay":250}'>
 					<div class="elementor-element elementor-element-63bca05 elementor-widget__width-initial elementor-widget elementor-widget-heading"

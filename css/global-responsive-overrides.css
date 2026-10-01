@@ -1,4 +1,4 @@
-/* Global Responsive Overrides 
+﻿/* Global Responsive Overrides 
 
    Media Query Structure Guidelines:
    - 1920px desktop -> spacious layout: @media (min-width: 1367px) and (max-width: 1920px)
@@ -11921,4 +11921,72 @@ i.fas {
 	box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
 }
 
-
+
+/* Fix header overlap by shrinking elements on smaller desktops instead of hiding the logo */
+@media (max-width: 1450px) {
+    /* Reduce spacing between menu items */
+    .jkit-menu-direction-flex > li > a {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        font-size: 14px !important;
+    }
+    
+    /* Shrink the right side text logo */
+    .header-right-logo-img {
+        max-width: 200px !important;
+    }
+    
+    /* Ensure the center menu container doesn't force a width */
+    .jkit-menu-wrapper {
+        margin: 0 15px !important;
+    }
+}
+/* Fix Warning 4: Prevent text clipping in banners on mobile */
+@media (max-width: 767px) {
+    .global-page-banner,
+    .elementor-element-5045df6e,
+    .elementor-element-4d66946e,
+    .elementor-element-1c33e6f3,
+    .elementor-element-4700a098,
+    .elementor-element-21d9713a,
+    .elementor-element-600a7cba,
+    .elementor-element-30bf14f8,
+    .elementor-element-236e26d {
+        height: auto !important;
+        min-height: 490px !important;
+        max-height: none !important;
+        padding-top: 130px !important;
+        padding-bottom: 60px !important;
+    }
+}
+/* 
+============================================================
+GLOBAL HEADER OVERLAP FIX
+Forces reasonable column widths for the header on all pages
+to prevent the menu and logos from merging above 1024px.
+============================================================
+*/
+@media (min-width: 1025px) {
+    /* Left Logo Column */
+    div.elementor-element.elementor-element-2f5833d4 {
+        --width: 25% !important;
+        width: 25% !important;
+    }
+    
+    /* Middle Menu Column */
+    div.elementor-element.elementor-element-c8adcb1 {
+        --width: 50% !important;
+        width: 50% !important;
+    }
+    
+    /* Right Logo Column */
+    div.elementor-element.elementor-element-67328794 {
+        --width: 25% !important;
+        width: 25% !important;
+    }
+    
+    /* Center the menu items so they don't lean left and touch the left logo */
+    .elementor-element-62149d7b .jkit-menu-direction-flex {
+        justify-content: center !important;
+    }
+}
