@@ -11334,7 +11334,7 @@ i.fas {
 	.jkit-menu-wrapper,
 	.jkit-menu-container {
 		flex: 1 1 auto !important;
-		width: 100% !important;
+
 		display: flex !important;
 		align-items: center !important;
 		align-self: center !important;
@@ -11870,7 +11870,8 @@ i.fas {
 .captcha-input {
 	width: 100% !important;
 	padding: 12px 16px !important;
-	border: 1.5px solid #94a3b8 !important; /* Clearly visible, clean slate border */
+	border: 1.5px solid #94a3b8 !important;
+	/* Clearly visible, clean slate border */
 	border-radius: 8px !important;
 	font-size: 14px !important;
 	color: #1e293b !important;
@@ -11899,41 +11900,45 @@ i.fas {
 
 /* Fix header overlap by shrinking elements on smaller desktops instead of hiding the logo */
 @media (max-width: 1450px) {
-    /* Reduce spacing between menu items */
-    .jkit-menu-direction-flex > li > a {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-        font-size: 14px !important;
-    }
-    
-    /* Shrink the right side text logo */
-    .header-right-logo-img {
-        max-width: 200px !important;
-    }
-    
-    /* Ensure the center menu container doesn't force a width */
-    .jkit-menu-wrapper {
-        margin: 0 15px !important;
-    }
+
+	/* Reduce spacing between menu items */
+	.jkit-menu-direction-flex>li>a {
+		padding-left: 10px !important;
+		padding-right: 10px !important;
+		font-size: 14px !important;
+	}
+
+	/* Shrink the right side text logo */
+	.header-right-logo-img {
+		max-width: 200px !important;
+	}
+
+	/* Ensure the center menu container doesn't force a width */
+	.jkit-menu-wrapper {
+		margin: 0 15px !important;
+	}
 }
+
 /* Fix Warning 4: Prevent text clipping in banners on mobile */
 @media (max-width: 767px) {
-    .global-page-banner,
-    .elementor-element-5045df6e,
-    .elementor-element-4d66946e,
-    .elementor-element-1c33e6f3,
-    .elementor-element-4700a098,
-    .elementor-element-21d9713a,
-    .elementor-element-600a7cba,
-    .elementor-element-30bf14f8,
-    .elementor-element-236e26d {
-        height: auto !important;
-        min-height: 490px !important;
-        max-height: none !important;
-        padding-top: 130px !important;
-        padding-bottom: 60px !important;
-    }
+
+	.global-page-banner,
+	.elementor-element-5045df6e,
+	.elementor-element-4d66946e,
+	.elementor-element-1c33e6f3,
+	.elementor-element-4700a098,
+	.elementor-element-21d9713a,
+	.elementor-element-600a7cba,
+	.elementor-element-30bf14f8,
+	.elementor-element-236e26d {
+		height: auto !important;
+		min-height: 490px !important;
+		max-height: none !important;
+		padding-top: 130px !important;
+		padding-bottom: 60px !important;
+	}
 }
+
 /* 
 ============================================================
 GLOBAL HEADER OVERLAP FIX
@@ -11942,139 +11947,196 @@ to prevent the menu and logos from merging above 1024px.
 ============================================================
 */
 @media (min-width: 1025px) {
-    /* Left Logo Column */
-    div.elementor-element.elementor-element-2f5833d4 {
-        --width: 25% !important;
-        width: 25% !important;
-    }
-    
-    /* Middle Menu Column */
-    div.elementor-element.elementor-element-c8adcb1 {
-        --width: 50% !important;
-        width: 50% !important;
-    }
-    
-    /* Right Logo Column */
-    div.elementor-element.elementor-element-67328794 {
-        --width: 25% !important;
-        width: 25% !important;
-    }
-    
-    /* Center the menu items so they don't lean left and touch the left logo */
-    .elementor-element-62149d7b .jkit-menu-direction-flex {
-        justify-content: center !important;
-    }
+
+	/* Left Logo Column */
+	div.elementor-element.elementor-element-2f5833d4 {
+		--width: 25% !important;
+		width: 25% !important;
+	}
+
+	/* Middle Menu Column */
+	div.elementor-element.elementor-element-c8adcb1 {
+		--width: 50% !important;
+		width: 50% !important;
+	}
+
+	/* Right Logo Column */
+	div.elementor-element.elementor-element-67328794 {
+		--width: 25% !important;
+		width: 25% !important;
+	}
+
+	/* Center the menu items so they don't lean left and touch the left logo */
+	.elementor-element-62149d7b .jkit-menu-direction-flex {
+		justify-content: center !important;
+	}
 }
 
 /* Tablet Fixes for Header Overlap and General Layouts */
 @media (max-width: 1250px) and (min-width: 768px) {
-    div.elementor-element.elementor-element-2f5833d4 {
-        --width: 25% !important;
-        width: 25% !important;
-    }
-    div.elementor-element.elementor-element-c8adcb1 {
-        --width: 75% !important;
-        width: 75% !important;
-    }
-    div.elementor-element.elementor-element-67328794 {
-        display: none !important;
-    }
-    .elementor-element-62149d7b .jkit-menu-direction-flex {
-        justify-content: flex-end !important;
-    }
-    
-    /* Ensure multi-column sections collapse if they get too squeezed on tablet */
-    .e-con.e-flex, .elementor-container {
-        flex-wrap: wrap !important;
-    }
-    
-    /* Footer tablet 2-column layout to prevent long stacking */
-    div.elementor.elementor-76 div.elementor-element.elementor-element-31f28075 > .e-con-inner,
-    div.elementor-element.elementor-element-31f28075 > .e-con-inner {
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        width: 100% !important;
-    }
-    
-    div.elementor.elementor-76 div.elementor-element.elementor-element-31f28075 > .e-con-inner > .e-con,
-    div.elementor-element.elementor-element-31f28075 > .e-con-inner > .e-con {
-        width: 50% !important;
-        max-width: 50% !important;
-        flex: 0 0 50% !important;
-        min-width: 0 !important;
-    }
+	div.elementor-element.elementor-element-2f5833d4 {
+		--width: 25% !important;
+		width: 25% !important;
+	}
+
+	div.elementor-element.elementor-element-c8adcb1 {
+		--width: 75% !important;
+		width: 75% !important;
+	}
+
+	div.elementor-element.elementor-element-67328794 {
+		display: none !important;
+	}
+
+	.elementor-element-62149d7b .jkit-menu-direction-flex {
+		justify-content: flex-end !important;
+	}
+
+	/* Ensure multi-column sections collapse if they get too squeezed on tablet */
+	.e-con.e-flex,
+	.elementor-container {
+		flex-wrap: wrap !important;
+	}
+
+	/* Footer tablet 2-column layout to prevent long stacking */
+	div.elementor.elementor-76 div.elementor-element.elementor-element-31f28075>.e-con-inner,
+	div.elementor-element.elementor-element-31f28075>.e-con-inner {
+		flex-direction: row !important;
+		flex-wrap: wrap !important;
+		width: 100% !important;
+	}
+
+	div.elementor.elementor-76 div.elementor-element.elementor-element-31f28075>.e-con-inner>.e-con,
+	div.elementor-element.elementor-element-31f28075>.e-con-inner>.e-con {
+		width: 50% !important;
+		max-width: 50% !important;
+		flex: 0 0 50% !important;
+		min-width: 0 !important;
+	}
 }
 
 /* Global Mobile Fixes for Responsive Layouts - Aggressive */
 @media (max-width: 767px) {
-    body, html {
-        overflow-x: hidden !important;
-        width: 100% !important;
-        max-width: 100vw !important;
-    }
 
-    .e-con, .e-con-inner, .elementor-container, .elementor-row, .e-flex {
-        flex-direction: column !important;
-        flex-wrap: nowrap !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        display: flex !important;
-    }
-    
-    .e-con-inner > *, .elementor-column, .elementor-widget-wrap, .elementor-widget {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0 !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        box-sizing: border-box !important;
-        flex: 0 0 100% !important;
-    }
-    
-    img {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-    
-    /* Typography word breaking to prevent horizontal scroll */
-    h1, h2, h3, h4, h5, h6, p, a, span, .elementor-heading-title, div {
-        word-wrap: break-word !important;
-        overflow-wrap: break-word !important;
-        white-space: normal !important;
-    }
-    
-    /* Fix specific Elementor absolute widths that might cause overflow */
-    .elementor-widget-container {
-        margin: 0 !important;
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-    }
-    
-    /* Footer mobile 2-column layout */
-    div.elementor.elementor-76 div.elementor-element.elementor-element-31f28075 > .e-con-inner,
-    div.elementor-element.elementor-element-31f28075 > .e-con-inner {
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        width: 100% !important;
-    }
-    
-    div.elementor.elementor-76 div.elementor-element.elementor-element-31f28075 > .e-con-inner > .e-con,
-    div.elementor-element.elementor-element-31f28075 > .e-con-inner > .e-con {
-        width: 100% !important; /* Full width for logo and address */
-        max-width: 100% !important;
-        flex: 0 0 100% !important;
-        min-width: 0 !important;
-    }
-    
-    div.elementor.elementor-76 div.elementor-element.elementor-element-31f28075 > .e-con-inner > .elementor-element-43adfd6b,
-    div.elementor-element.elementor-element-31f28075 > .e-con-inner > .elementor-element-43adfd6b,
-    div.elementor.elementor-76 div.elementor-element.elementor-element-31f28075 > .e-con-inner > .elementor-element-9d0d9e7,
-    div.elementor-element.elementor-element-31f28075 > .e-con-inner > .elementor-element-9d0d9e7,
-    div.elementor.elementor-76 div.elementor-element.elementor-element-31f28075 > .e-con-inner > .elementor-element-66adc269,
-    div.elementor-element.elementor-element-31f28075 > .e-con-inner > .elementor-element-66adc269 {
-        width: 50% !important; /* 2 columns for links */
-        max-width: 50% !important;
-        flex: 0 0 50% !important;
-        min-width: 0 !important;
-    }
+	body,
+	html {
+		overflow-x: hidden !important;
+		width: 100% !important;
+		max-width: 100vw !important;
+	}
+
+	.e-con,
+	.e-con-inner,
+	.elementor-container,
+	.elementor-row,
+	.e-flex {
+		flex-direction: column !important;
+		flex-wrap: nowrap !important;
+		width: 100% !important;
+		min-width: 0 !important;
+		display: flex !important;
+	}
+
+	.e-con-inner>*,
+	.elementor-column,
+	.elementor-widget-wrap,
+	.elementor-widget {
+		width: 100% !important;
+		max-width: 100% !important;
+		min-width: 0 !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		box-sizing: border-box !important;
+		flex: 0 0 100% !important;
+	}
+
+	img {
+		max-width: 100% !important;
+		height: auto !important;
+	}
+
+	/* Typography word breaking to prevent horizontal scroll */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	a,
+	span,
+	.elementor-heading-title,
+	div {
+		word-wrap: break-word !important;
+		overflow-wrap: break-word !important;
+		white-space: normal !important;
+	}
+
+	/* Fix specific Elementor absolute widths that might cause overflow */
+	.elementor-widget-container {
+		margin: 0 !important;
+		padding-left: 10px !important;
+		padding-right: 10px !important;
+	}
+
+	/* Footer mobile 2-column layout */
+	div.elementor.elementor-76 div.elementor-element.elementor-element-31f28075>.e-con-inner,
+	div.elementor-element.elementor-element-31f28075>.e-con-inner {
+		flex-direction: row !important;
+		flex-wrap: wrap !important;
+		width: 100% !important;
+	}
+
+	div.elementor.elementor-76 div.elementor-element.elementor-element-31f28075>.e-con-inner>.e-con,
+	div.elementor-element.elementor-element-31f28075>.e-con-inner>.e-con {
+		width: 100% !important;
+		/* Full width for logo and address */
+		max-width: 100% !important;
+		flex: 0 0 100% !important;
+		min-width: 0 !important;
+	}
+
+	div.elementor.elementor-76 div.elementor-element.elementor-element-31f28075>.e-con-inner>.elementor-element-43adfd6b,
+	div.elementor-element.elementor-element-31f28075>.e-con-inner>.elementor-element-43adfd6b,
+	div.elementor.elementor-76 div.elementor-element.elementor-element-31f28075>.e-con-inner>.elementor-element-9d0d9e7,
+	div.elementor-element.elementor-element-31f28075>.e-con-inner>.elementor-element-9d0d9e7,
+	div.elementor.elementor-76 div.elementor-element.elementor-element-31f28075>.e-con-inner>.elementor-element-66adc269,
+	div.elementor-element.elementor-element-31f28075>.e-con-inner>.elementor-element-66adc269 {
+		width: 50% !important;
+		/* 2 columns for links */
+		max-width: 50% !important;
+		flex: 0 0 50% !important;
+		min-width: 0 !important;
+	}
+}
+
+/* Fix for scrolled header menu and right logo gap - ALL PAGES */
+@media (min-width: 1025px) {
+
+	.header-scrolled .elementor-element-103b840d>.e-con-inner,
+	.header-scrolled .elementor-element-36cf2448>.e-con-inner {
+		max-width: 1440px !important;
+		margin: 0 auto !important;
+	}
+
+	.header-scrolled .elementor-element-c8adcb1,
+	.header-scrolled .elementor-element-1b63de07 {
+		width: 50% !important;
+	}
+
+	.header-scrolled .header-right-logo-container {
+		width: 25% !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	.header-scrolled .header-right-logo-container .elementor-widget-container {
+		width: 100% !important;
+		justify-content: flex-start !important;
+	}
+
+	.header-scrolled .jkit-menu-direction-flex {
+		justify-content: flex-end !important;
+		padding-right: 30px !important;
+	}
 }
